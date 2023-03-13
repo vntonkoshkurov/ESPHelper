@@ -160,6 +160,8 @@ class MainActivity : AppCompatActivity() {
         if (reStartval) {
             reStartval = NOTHING
         } else {
+            /**Здесь необходимо проработать интент от Сервисной службы.
+             * Когда Появляется интент от сервисной службы активность должны открыть фрагмент ВНР*/
             navView.selectedItemId = R.id.fragment1
         }
 
