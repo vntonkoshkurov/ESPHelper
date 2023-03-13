@@ -1,0 +1,54 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.ESPSpecialistHelper" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/red</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/red</item>
+        <item name="colorSecondaryVariant">@color/white</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <!-- Customize your theme here. -->
+        <item name="android:fontFamily">@font/open_sans</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:backgroundTint">@color/white</item>
+
+    </style>
+
+    <style name="VectorTint" parent="Theme.ESPSpecialistHelper">
+        <item name="android:tint">@color/day_icon</item>
+    </style>
+
+    <style name="VectorStroke" parent="Theme.ESPSpecialistHelper">
+        <item name="android:tint">@color/black</item>
+    </style>
+
+    <style name="SelectorStyle" parent="Theme.ESPSpecialistHelper">
+        <item name="android:tint">@color/white</item>
+    </style>
+
+    <style name="AppBarTheme" parent="Theme.ESPSpecialistHelper">
+        <item name="colorPrimary">@color/white</item>
+    </style>
+
+    <style name="TextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <item name="boxStrokeColor">@color/text_field_layout</item>
+    </style>
+
+    <style name="TextLabel" parent="TextAppearance.Design.Hint">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <!--Floating label text style-->
+    <style name="MyHintText" parent="TextAppearance.AppCompat.Small">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <!--Input field style-->
+    <style name="MyEditText" parent="Theme.AppCompat.Light">
+    <item name="colorControlNormal">@color/black</item>
+    <item name="colorControlActivated">@color/black</item>
+    </style>
+</resources>

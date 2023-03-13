@@ -1,0 +1,1434 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    tools:context=".ui.comissioning.Comissioning">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppBarTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:theme="@style/VectorStroke"
+                app:navigationIcon="@drawable/icon_back"
+                app:title="@string/menu2_button3" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:theme="@style/Theme.ESPSpecialistHelper"
+            app:layout_constraintBottom_toTopOf="@id/time_button_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/appBarLayout">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:ignore="UselessParent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/set1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/square_white"
+                        android:elevation="12dp"
+                        android:theme="@style/Theme.ESPSpecialistHelper"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/tubing_title"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="30dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="30dp"
+                            android:selectAllOnFocus="false"
+                            android:text="@string/tubing_title"
+                            android:textAlignment="center"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/info_set1"
+                            style="@style/VectorTint"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="5dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/about_selector"
+                            tools:ignore="ContentDescription" />
+
+                        <TextView
+                            android:id="@+id/title2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:text="1:"
+                            android:textSize="16sp"
+                            app:layout_constraintEnd_toStartOf="@+id/tubing1_type"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintHorizontal_chainStyle="packed"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tubing_title"
+                            app:layout_goneMarginTop="15dp"
+                            tools:ignore="HardcodedText,TextContrastCheck" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/tubing1_type"
+                            android:layout_width="130dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="3dp"
+                            android:clipToPadding="false"
+                            android:orientation="horizontal"
+                            android:paddingLeft="60dp"
+                            android:paddingEnd="60dp"
+                            android:paddingRight="60dp"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            app:layout_constraintBottom_toBottomOf="@id/title2"
+                            app:layout_constraintEnd_toStartOf="@+id/tubing1_type_length"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/title2"
+                            app:layout_constraintTop_toTopOf="@id/title2"
+                            tools:ignore="MissingConstraints"
+                            tools:listitem="@layout/picker" />
+
+                        <ImageView
+                            android:id="@+id/tubing1_type_image1"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:src="@drawable/layer_list"
+                            android:theme="@style/SelectorStyle"
+                            app:layout_constraintBottom_toBottomOf="@id/tubing1_type"
+                            app:layout_constraintEnd_toEndOf="@id/tubing1_type"
+                            app:layout_constraintStart_toStartOf="@id/tubing1_type"
+                            app:layout_constraintTop_toTopOf="@id/tubing1_type"
+                            tools:ignore="ContentDescription"
+                            tools:layout_editor_absoluteX="138dp"
+                            tools:layout_editor_absoluteY="59dp" />
+
+                        <ImageView
+                            android:id="@+id/tubing1_type_image2"
+                            android:layout_width="70dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/square2"
+                            android:theme="@style/VectorStroke"
+                            app:layout_constraintBottom_toBottomOf="@id/tubing1_type"
+                            app:layout_constraintEnd_toEndOf="@id/tubing1_type"
+                            app:layout_constraintStart_toStartOf="@id/tubing1_type"
+                            app:layout_constraintTop_toTopOf="@id/tubing1_type"
+                            tools:ignore="ContentDescription"
+                            tools:layout_editor_absoluteX="153dp"
+                            tools:layout_editor_absoluteY="51dp" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/tubing1_type_length"
+                            style="@style/TextInputLayoutStyle"
+                            android:layout_width="110dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="3dp"
+                            android:hint="@string/cable_length"
+                            app:hintTextAppearance="@style/TextLabel"
+                            app:layout_constraintBottom_toBottomOf="@id/tubing1_type"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/tubing1_type"
+                            app:layout_constraintTop_toTopOf="@id/tubing1_type">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/tubing1_length"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:imeOptions="actionDone"
+                                android:inputType="number|numberDecimal"
+                                android:longClickable="false"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="10dp"
+                                android:textAlignment="center"
+                                android:textSize="16sp"
+                                tools:ignore="DuplicateSpeakableTextCheck" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <TextView
+                            android:id="@+id/title3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="30dp"
+                            android:text="2:"
+                            android:textSize="16sp"
+                            app:layout_constraintEnd_toStartOf="@+id/tubing2_type"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintHorizontal_chainStyle="packed"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/title2"
+                            app:layout_goneMarginTop="15dp"
+                            tools:ignore="HardcodedText" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/tubing2_type"
+                            android:layout_width="130dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="3dp"
+                            android:clipToPadding="false"
+                            android:orientation="horizontal"
+                            android:paddingLeft="60dp"
+                            android:paddingEnd="60dp"
+                            android:paddingRight="60dp"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            app:layout_constraintBottom_toBottomOf="@id/title3"
+                            app:layout_constraintEnd_toStartOf="@+id/tubing2_type_length"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/title3"
+                            app:layout_constraintTop_toTopOf="@id/title3"
+                            tools:ignore="MissingConstraints"
+                            tools:listitem="@layout/picker" />
+
+                        <ImageView
+                            android:id="@+id/tubing2_type_image1"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:src="@drawable/layer_list"
+                            android:theme="@style/SelectorStyle"
+                            app:layout_constraintBottom_toBottomOf="@id/tubing2_type"
+                            app:layout_constraintEnd_toEndOf="@id/tubing2_type"
+                            app:layout_constraintStart_toStartOf="@id/tubing2_type"
+                            app:layout_constraintTop_toTopOf="@id/tubing2_type"
+                            tools:ignore="ContentDescription"
+                            tools:layout_editor_absoluteX="138dp"
+                            tools:layout_editor_absoluteY="59dp" />
+
+                        <ImageView
+                            android:id="@+id/tubing2_type_image2"
+                            android:layout_width="70dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/square2"
+                            android:theme="@style/VectorStroke"
+                            app:layout_constraintBottom_toBottomOf="@id/tubing2_type"
+                            app:layout_constraintEnd_toEndOf="@id/tubing2_type"
+                            app:layout_constraintStart_toStartOf="@id/tubing2_type"
+                            app:layout_constraintTop_toTopOf="@id/tubing2_type"
+                            tools:ignore="ContentDescription"
+                            tools:layout_editor_absoluteX="153dp"
+                            tools:layout_editor_absoluteY="51dp" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/tubing2_type_length"
+                            style="@style/TextInputLayoutStyle"
+                            android:layout_width="110dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="3dp"
+                            android:hint="@string/cable_length"
+                            app:hintTextAppearance="@style/TextLabel"
+                            app:layout_constraintBottom_toBottomOf="@id/tubing2_type"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/tubing2_type"
+                            app:layout_constraintTop_toTopOf="@id/tubing2_type">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/tubing2_length"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:imeOptions="actionDone"
+                                android:inputType="number|numberDecimal"
+                                android:enabled="false"
+                                android:longClickable="false"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="10dp"
+                                android:textAlignment="center"
+                                android:textSize="16sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <TextView
+                            android:id="@+id/title4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="30dp"
+                            android:text="3:"
+                            android:textSize="16sp"
+                            app:layout_constraintEnd_toStartOf="@+id/tubing3_type"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintHorizontal_chainStyle="packed"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/title3"
+                            app:layout_goneMarginTop="15dp"
+                            tools:ignore="HardcodedText" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/tubing3_type"
+                            android:layout_width="130dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="3dp"
+                            android:clipToPadding="false"
+                            android:orientation="horizontal"
+                            android:paddingLeft="60dp"
+                            android:paddingEnd="60dp"
+                            android:paddingRight="60dp"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            app:layout_constraintBottom_toBottomOf="@id/title4"
+                            app:layout_constraintEnd_toStartOf="@+id/tubing3_type_length"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/title4"
+                            app:layout_constraintTop_toTopOf="@id/title4"
+                            tools:ignore="MissingConstraints"
+                            tools:listitem="@layout/picker" />
+
+                        <ImageView
+                            android:id="@+id/tubing3_type_image1"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:src="@drawable/layer_list"
+                            android:theme="@style/SelectorStyle"
+                            app:layout_constraintBottom_toBottomOf="@id/tubing3_type"
+                            app:layout_constraintEnd_toEndOf="@id/tubing3_type"
+                            app:layout_constraintStart_toStartOf="@id/tubing3_type"
+                            app:layout_constraintTop_toTopOf="@id/tubing3_type"
+                            tools:ignore="ContentDescription"
+                            tools:layout_editor_absoluteX="138dp"
+                            tools:layout_editor_absoluteY="59dp" />
+
+                        <ImageView
+                            android:id="@+id/tubing3_type_image2"
+                            android:layout_width="70dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/square2"
+                            android:theme="@style/VectorStroke"
+                            app:layout_constraintBottom_toBottomOf="@id/tubing3_type"
+                            app:layout_constraintEnd_toEndOf="@id/tubing3_type"
+                            app:layout_constraintStart_toStartOf="@id/tubing3_type"
+                            app:layout_constraintTop_toTopOf="@id/tubing3_type"
+                            tools:ignore="ContentDescription"
+                            tools:layout_editor_absoluteX="153dp"
+                            tools:layout_editor_absoluteY="51dp" />
+
+                        <TextView
+                            android:id="@+id/tubing_total_length_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginBottom="5dp"
+                            android:text="@string/tubing_total_length"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/title4" />
+
+                        <TextView
+                            android:id="@+id/tubing_total_length_val"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:text="-"
+                            android:textColor="@color/red"
+                            app:layout_constraintBottom_toBottomOf="@+id/tubing_total_length_title"
+                            app:layout_constraintStart_toEndOf="@+id/tubing_total_length_title"
+                            app:layout_constraintTop_toTopOf="@+id/tubing_total_length_title"
+                            tools:ignore="HardcodedText,TextContrastCheck" />
+
+                        <TextView
+                            android:id="@+id/tubing_total_length_measurement_val"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:text="@string/length_measurement_val"
+                            app:layout_constraintBottom_toBottomOf="@+id/tubing_total_length_val"
+                            app:layout_constraintStart_toEndOf="@id/tubing_total_length_val"
+                            app:layout_constraintTop_toTopOf="@+id/tubing_total_length_val" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/tubing3_type_length"
+                            style="@style/TextInputLayoutStyle"
+                            android:layout_width="110dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="3dp"
+                            android:hint="@string/cable_length"
+                            app:hintTextAppearance="@style/TextLabel"
+                            app:layout_constraintBottom_toBottomOf="@id/tubing3_type"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/tubing3_type"
+                            app:layout_constraintTop_toTopOf="@id/tubing3_type">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/tubing3_length"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:enabled="false"
+                                android:imeOptions="actionDone"
+                                android:inputType="number|numberDecimal"
+                                android:longClickable="false"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="10dp"
+                                android:textAlignment="center"
+                                android:textSize="16sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/set2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/square_white"
+                        android:elevation="12dp"
+                        android:theme="@style/Theme.ESPSpecialistHelper"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/set1">
+
+                        <TextView
+                            android:id="@+id/casing_title"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="30dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="30dp"
+                            android:selectAllOnFocus="false"
+                            android:text="@string/casing_title"
+                            android:textAlignment="center"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/casing_rec_length"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:selectAllOnFocus="false"
+                            android:text="@string/total_length_control"
+                            android:textAlignment="center"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toStartOf="@+id/casing_rec_length_val"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintHorizontal_chainStyle="packed"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/casing_title" />
+
+                        <TextView
+                            android:id="@+id/casing_rec_length_val"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:selectAllOnFocus="false"
+                            android:text="-"
+                            android:textAlignment="center"
+                            android:textColor="@color/red"
+                            android:textSize="18sp"
+                            app:layout_constraintBottom_toBottomOf="@id/casing_rec_length"
+                            app:layout_constraintEnd_toStartOf="@+id/casing_rec_length_measur_val"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/casing_rec_length"
+                            app:layout_constraintTop_toTopOf="@id/casing_rec_length"
+                            tools:ignore="HardcodedText" />
+
+                        <TextView
+                            android:id="@+id/casing_rec_length_measur_val"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:selectAllOnFocus="false"
+                            android:text="@string/length_measurement_val"
+                            android:textAlignment="center"
+                            android:textSize="18sp"
+                            app:layout_constraintBottom_toBottomOf="@id/casing_rec_length_val"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/casing_rec_length_val"
+                            app:layout_constraintTop_toTopOf="@id/casing_rec_length_val" />
+
+                        <ImageView
+                            android:id="@+id/info_set2"
+                            style="@style/VectorTint"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="5dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/about_selector"
+                            tools:ignore="ContentDescription" />
+
+                        <TextView
+                            android:id="@+id/casing_title2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:text="1:"
+                            android:textSize="16sp"
+                            app:layout_constraintEnd_toStartOf="@+id/casing1_type"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintHorizontal_chainStyle="packed"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/casing_rec_length"
+                            app:layout_goneMarginTop="15dp"
+                            tools:ignore="HardcodedText,TextContrastCheck" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/casing1_type"
+                            android:layout_width="130dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="3dp"
+                            android:clipToPadding="false"
+                            android:orientation="horizontal"
+                            android:paddingLeft="60dp"
+                            android:paddingEnd="60dp"
+                            android:paddingRight="60dp"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            app:layout_constraintBottom_toBottomOf="@id/casing_title2"
+                            app:layout_constraintEnd_toStartOf="@+id/casing1_type_length"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/casing_title2"
+                            app:layout_constraintTop_toTopOf="@id/casing_title2"
+                            tools:ignore="MissingConstraints"
+                            tools:listitem="@layout/picker" />
+
+                        <ImageView
+                            android:id="@+id/casing1_type_image1"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:src="@drawable/layer_list"
+                            android:theme="@style/SelectorStyle"
+                            app:layout_constraintBottom_toBottomOf="@id/casing1_type"
+                            app:layout_constraintEnd_toEndOf="@id/casing1_type"
+                            app:layout_constraintStart_toStartOf="@id/casing1_type"
+                            app:layout_constraintTop_toTopOf="@id/casing1_type"
+                            tools:ignore="ContentDescription"
+                            tools:layout_editor_absoluteX="138dp"
+                            tools:layout_editor_absoluteY="59dp" />
+
+                        <ImageView
+                            android:id="@+id/casing1_type_image2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:src="@drawable/square3"
+                            android:theme="@style/VectorStroke"
+                            app:layout_constraintBottom_toBottomOf="@id/casing1_type"
+                            app:layout_constraintEnd_toEndOf="@id/casing1_type"
+                            app:layout_constraintStart_toStartOf="@id/casing1_type"
+                            app:layout_constraintTop_toTopOf="@id/casing1_type"
+                            tools:ignore="ContentDescription" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/casing1_type_length"
+                            style="@style/TextInputLayoutStyle"
+                            android:layout_width="110dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="3dp"
+                            android:hint="@string/cable_length"
+                            app:hintTextAppearance="@style/TextLabel"
+                            app:layout_constraintBottom_toBottomOf="@id/casing1_type"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/casing1_type"
+                            app:layout_constraintTop_toTopOf="@id/casing1_type">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/casing1_length"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:imeOptions="actionDone"
+                                android:inputType="number|numberDecimal"
+                                android:longClickable="false"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="10dp"
+                                android:textAlignment="center"
+                                android:textSize="16sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <TextView
+                            android:id="@+id/casing_title3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="30dp"
+                            android:text="2:"
+                            android:textSize="16sp"
+                            app:layout_constraintEnd_toStartOf="@+id/casing2_type"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintHorizontal_chainStyle="packed"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/casing_title2"
+                            app:layout_goneMarginTop="15dp"
+                            tools:ignore="HardcodedText" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/casing2_type"
+                            android:layout_width="130dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="3dp"
+                            android:clipToPadding="false"
+                            android:orientation="horizontal"
+                            android:paddingLeft="60dp"
+                            android:paddingEnd="60dp"
+                            android:paddingRight="60dp"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            app:layout_constraintBottom_toBottomOf="@id/casing_title3"
+                            app:layout_constraintEnd_toStartOf="@+id/casing2_type_length"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/casing_title3"
+                            app:layout_constraintTop_toTopOf="@id/casing_title3"
+                            tools:ignore="MissingConstraints"
+                            tools:listitem="@layout/picker" />
+
+                        <ImageView
+                            android:id="@+id/casing2_type_image1"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:src="@drawable/layer_list"
+                            android:theme="@style/SelectorStyle"
+                            app:layout_constraintBottom_toBottomOf="@id/casing2_type"
+                            app:layout_constraintEnd_toEndOf="@id/casing2_type"
+                            app:layout_constraintStart_toStartOf="@id/casing2_type"
+                            app:layout_constraintTop_toTopOf="@id/casing2_type"
+                            tools:ignore="ContentDescription"
+                            tools:layout_editor_absoluteX="138dp"
+                            tools:layout_editor_absoluteY="59dp" />
+
+                        <ImageView
+                            android:id="@+id/casing2_type_image2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:src="@drawable/square3"
+                            android:theme="@style/VectorStroke"
+                            app:layout_constraintBottom_toBottomOf="@id/casing2_type"
+                            app:layout_constraintEnd_toEndOf="@id/casing2_type"
+                            app:layout_constraintStart_toStartOf="@id/casing2_type"
+                            app:layout_constraintTop_toTopOf="@id/casing2_type"
+                            tools:ignore="ContentDescription"
+                            tools:layout_editor_absoluteX="153dp"
+                            tools:layout_editor_absoluteY="51dp" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/casing2_type_length"
+                            style="@style/TextInputLayoutStyle"
+                            android:layout_width="110dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="3dp"
+                            android:hint="@string/cable_length"
+                            app:hintTextAppearance="@style/TextLabel"
+                            app:layout_constraintBottom_toBottomOf="@id/casing2_type"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/casing2_type"
+                            app:layout_constraintTop_toTopOf="@id/casing2_type">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/casing2_length"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:enabled="false"
+                                android:imeOptions="actionDone"
+                                android:inputType="number|numberDecimal"
+                                android:longClickable="false"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="10dp"
+                                android:textAlignment="center"
+                                android:textSize="16sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <TextView
+                            android:id="@+id/casing_title4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="30dp"
+                            android:layout_marginBottom="20dp"
+                            android:text="3:"
+                            android:textSize="16sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/casing3_type"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintHorizontal_chainStyle="packed"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/casing_title3"
+                            app:layout_goneMarginTop="15dp"
+                            tools:ignore="HardcodedText" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/casing3_type"
+                            android:layout_width="130dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="3dp"
+                            android:clipToPadding="false"
+                            android:orientation="horizontal"
+                            android:paddingLeft="60dp"
+                            android:paddingEnd="60dp"
+                            android:paddingRight="60dp"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            app:layout_constraintBottom_toBottomOf="@id/casing_title4"
+                            app:layout_constraintEnd_toStartOf="@+id/casing3_type_length"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/casing_title4"
+                            app:layout_constraintTop_toTopOf="@id/casing_title4"
+                            tools:ignore="MissingConstraints"
+                            tools:listitem="@layout/picker" />
+
+                        <ImageView
+                            android:id="@+id/casing3_type_image1"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:src="@drawable/layer_list"
+                            android:theme="@style/SelectorStyle"
+                            app:layout_constraintBottom_toBottomOf="@id/casing3_type"
+                            app:layout_constraintEnd_toEndOf="@id/casing3_type"
+                            app:layout_constraintStart_toStartOf="@id/casing3_type"
+                            app:layout_constraintTop_toTopOf="@id/casing3_type"
+                            tools:ignore="ContentDescription"
+                            tools:layout_editor_absoluteX="138dp"
+                            tools:layout_editor_absoluteY="59dp" />
+
+                        <ImageView
+                            android:id="@+id/casing3_type_image2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:contentDescription="TODO"
+                            android:src="@drawable/square3"
+                            android:theme="@style/VectorStroke"
+                            app:layout_constraintBottom_toBottomOf="@id/casing3_type"
+                            app:layout_constraintEnd_toEndOf="@id/casing3_type"
+                            app:layout_constraintStart_toStartOf="@id/casing3_type"
+                            app:layout_constraintTop_toTopOf="@id/casing3_type"
+                            tools:ignore="ContentDescription,HardcodedText"
+                            tools:layout_editor_absoluteX="153dp"
+                            tools:layout_editor_absoluteY="51dp" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/casing3_type_length"
+                            style="@style/TextInputLayoutStyle"
+                            android:layout_width="110dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="3dp"
+                            android:hint="@string/cable_length"
+                            app:hintTextAppearance="@style/TextLabel"
+                            app:layout_constraintBottom_toBottomOf="@id/casing3_type"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/casing3_type"
+                            app:layout_constraintTop_toTopOf="@id/casing3_type">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/casing3_length"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:enabled="false"
+                                android:imeOptions="actionDone"
+                                android:inputType="number|numberDecimal"
+                                android:longClickable="false"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="10dp"
+                                android:textAlignment="center"
+                                android:textSize="16sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/set3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/square_white"
+                        android:elevation="12dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/set2">
+
+                        <TextView
+                            android:id="@+id/set4_title"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="30dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="30dp"
+                            android:text="@string/comis_startup_title"
+                            android:textAlignment="center"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/info_set3"
+                            style="@style/VectorTint"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="4dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/about_selector"
+                            tools:ignore="ContentDescription" />
+
+                        <TextView
+                            android:id="@+id/startup_time_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="5dp"
+                            android:selectAllOnFocus="false"
+                            android:text="@string/startup_time_title"
+                            android:textAlignment="center"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/set4_title" />
+
+                        <TextView
+                            android:id="@+id/startup_time_value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="5dp"
+                            android:selectAllOnFocus="false"
+                            android:text="-"
+                            android:textColor="@color/red"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/startup_time_title"
+                            tools:ignore="HardcodedText,TextContrastCheck" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/startup_time_fluid_level"
+                            style="@style/TextInputLayoutStyle"
+                            android:layout_width="160dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:hint="@string/well_fluid_level"
+                            app:hintTextAppearance="@style/TextLabel"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/startup_time_value">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/startup_time_fluid_level_val"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:focusable="false"
+                                android:imeOptions="actionDone"
+                                android:inputType="number|numberDecimal"
+                                android:longClickable="false"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="10dp"
+                                android:textAlignment="center"
+                                android:textSize="16sp"
+                                tools:ignore="DuplicateSpeakableTextCheck" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/set4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/square_white"
+                        android:elevation="12dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/set3">
+
+                        <TextView
+                            android:id="@+id/set5_title"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="30dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="30dp"
+                            android:text="@string/comis_flow_appear_time_title"
+                            android:textAlignment="center"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/info_set4"
+                            style="@style/VectorTint"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="4dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/about_selector"
+                            tools:ignore="ContentDescription,TooManyViews" />
+
+                        <TextView
+                            android:id="@+id/fl_appearance_time_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="5dp"
+                            android:selectAllOnFocus="false"
+                            android:text="@string/fl_appearance_time_title"
+                            android:textAlignment="center"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/set5_title" />
+
+                        <TextView
+                            android:id="@+id/fl_appearance_time_val"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="5dp"
+                            android:selectAllOnFocus="false"
+                            android:text="-"
+                            android:textColor="@color/red"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/fl_appearance_time_title"
+                            tools:ignore="HardcodedText,TextContrastCheck" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/fl_appearance_time"
+                            style="@style/TextInputLayoutStyle"
+                            android:layout_width="160dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="5dp"
+                            android:hint="@string/time_waiting"
+                            app:hintTextAppearance="@style/TextLabel"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/fl_appearance_time_val">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/fl_appearance_time_value"
+                                android:layout_width="match_parent"
+                                android:layout_height="43dp"
+                                android:imeOptions="actionDone"
+                                android:inputType="number|numberDecimal"
+                                android:longClickable="false"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="10dp"
+                                android:textAlignment="center"
+                                android:textSize="16sp"
+                                tools:ignore="DuplicateSpeakableTextCheck" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/fl_appearance_time_fluid_level"
+                            style="@style/TextInputLayoutStyle"
+                            android:layout_width="160dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="5dp"
+                            android:hint="@string/well_fluid_level"
+                            app:hintTextAppearance="@style/TextLabel"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/fl_appearance_time">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/fl_appearance_time_fluid_level_val"
+                                android:layout_width="match_parent"
+                                android:layout_height="43dp"
+                                android:focusable="false"
+                                android:imeOptions="actionDone"
+                                android:inputType="number|numberDecimal"
+                                android:longClickable="false"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="10dp"
+                                android:textAlignment="center"
+                                android:textSize="16sp"
+                                tools:ignore="TextContrastCheck" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <TextView
+                            android:id="@+id/fl_appearance_calculation_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="5dp"
+                            android:selectAllOnFocus="false"
+                            android:text="@string/calculation_title"
+                            android:textAlignment="center"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/fl_appearance_time_fluid_level" />
+
+                        <TextView
+                            android:id="@+id/fl_appearance_calculation_vol_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="5dp"
+                            android:text="@string/fl_appearance_calculation_vol_title"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/fl_appearance_calculation_title" />
+
+                        <TextView
+                            android:id="@+id/fl_appearance_calculation_vol_val"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:selectAllOnFocus="false"
+                            android:text="-"
+                            android:textColor="@color/red"
+                            app:layout_constraintBottom_toBottomOf="@id/fl_appearance_calculation_vol_title"
+                            app:layout_constraintStart_toEndOf="@id/fl_appearance_calculation_vol_title"
+                            app:layout_constraintTop_toTopOf="@id/fl_appearance_calculation_vol_title"
+                            tools:ignore="HardcodedText,TextContrastCheck" />
+
+                        <TextView
+                            android:id="@+id/fl_appearance_calculation_vol_type"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:selectAllOnFocus="false"
+                            android:text="@string/volume_measurement_val"
+                            app:layout_constraintBottom_toBottomOf="@id/fl_appearance_calculation_vol_val"
+                            app:layout_constraintStart_toEndOf="@id/fl_appearance_calculation_vol_val"
+                            app:layout_constraintTop_toTopOf="@id/fl_appearance_calculation_vol_val" />
+
+                        <TextView
+                            android:id="@+id/fl_appearance_calculation_flow_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:text="@string/fl_appearance_calculation_flow_title"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/fl_appearance_calculation_vol_title" />
+
+                        <TextView
+                            android:id="@+id/fl_appearance_calculation_flow_val"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:selectAllOnFocus="false"
+                            android:text="-"
+                            android:textColor="@color/red"
+                            app:layout_constraintBottom_toBottomOf="@id/fl_appearance_calculation_flow_title"
+                            app:layout_constraintStart_toEndOf="@id/fl_appearance_calculation_flow_title"
+                            app:layout_constraintTop_toTopOf="@id/fl_appearance_calculation_flow_title"
+                            tools:ignore="HardcodedText,TextContrastCheck" />
+
+                        <TextView
+                            android:id="@+id/fl_appearance_calculation_flow_type"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:selectAllOnFocus="false"
+                            android:text="@string/flow_measurement_val"
+                            app:layout_constraintBottom_toBottomOf="@id/fl_appearance_calculation_flow_val"
+                            app:layout_constraintStart_toEndOf="@id/fl_appearance_calculation_flow_val"
+                            app:layout_constraintTop_toTopOf="@id/fl_appearance_calculation_flow_val" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/set5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/square_white_with_border"
+                        android:elevation="12dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/set4">
+
+                        <TextView
+                            android:id="@+id/set6_title"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="30dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="30dp"
+                            android:text="@string/comis_measurement_title"
+                            android:textAlignment="center"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="TooManyViews" />
+
+                        <ImageView
+                            android:id="@+id/info_set5"
+                            style="@style/VectorTint"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="4dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/about_selector"
+                            tools:ignore="ContentDescription" />
+
+                        <TextView
+                            android:id="@+id/measurement_time_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="5dp"
+                            android:selectAllOnFocus="false"
+                            android:text="@string/measurement_time_title"
+                            android:textAlignment="center"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/set6_title" />
+
+                        <TextView
+                            android:id="@+id/measurement_time_val"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="5dp"
+                            android:selectAllOnFocus="false"
+                            android:text="-"
+                            android:textColor="@color/red"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/measurement_time_title"
+                            tools:ignore="HardcodedText,TextContrastCheck" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/measure_time"
+                            style="@style/TextInputLayoutStyle"
+                            android:layout_width="160dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="5dp"
+                            android:hint="@string/time_waiting"
+                            app:hintTextAppearance="@style/TextLabel"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/measurement_time_val"
+                            tools:ignore="TooManyViews">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/measure_time_value"
+                                android:layout_width="match_parent"
+                                android:layout_height="43dp"
+                                android:imeOptions="actionDone"
+                                android:inputType="number|numberDecimal"
+                                android:longClickable="false"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="10dp"
+                                android:textAlignment="center"
+                                android:textSize="16sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/measure_time_fluid_level"
+                            style="@style/TextInputLayoutStyle"
+                            android:layout_width="160dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="5dp"
+                            android:hint="@string/well_fluid_level"
+                            app:hintTextAppearance="@style/TextLabel"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/measure_time">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/measure_time_fluid_level_val"
+                                android:layout_width="match_parent"
+                                android:layout_height="43dp"
+                                android:focusable="false"
+                                android:imeOptions="actionDone"
+                                android:inputType="number|numberDecimal"
+                                android:longClickable="false"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="10dp"
+                                android:textAlignment="center"
+                                android:textSize="16sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/measured_volume"
+                            style="@style/TextInputLayoutStyle"
+                            android:layout_width="160dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="5dp"
+                            android:hint="@string/measured_volume"
+                            app:hintTextAppearance="@style/TextLabel"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/measure_time_fluid_level">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/measured_volume_val"
+                                android:layout_width="match_parent"
+                                android:layout_height="43dp"
+                                android:imeOptions="actionDone"
+                                android:inputType="number|numberDecimal"
+                                android:longClickable="false"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="10dp"
+                                android:textAlignment="center"
+                                android:textSize="16sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/measured_flowrate"
+                            style="@style/TextInputLayoutStyle"
+                            android:layout_width="160dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="5dp"
+                            android:hint="@string/measured_flowrate"
+                            app:hintTextAppearance="@style/TextLabel"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/measured_volume">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/measured_flowrate_val"
+                                android:layout_width="match_parent"
+                                android:layout_height="43dp"
+                                android:imeOptions="actionDone"
+                                android:inputType="number|numberDecimal"
+                                android:longClickable="false"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="10dp"
+                                android:textAlignment="center"
+                                android:textSize="16sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <TextView
+                            android:id="@+id/measure_calculation_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="5dp"
+                            android:selectAllOnFocus="false"
+                            android:text="@string/calculation_title"
+                            android:textAlignment="center"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/measured_flowrate" />
+
+                        <TextView
+                            android:id="@+id/measure_calculation_vol_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="5dp"
+                            android:text="@string/fl_appearance_calculation_vol_title"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/measure_calculation_title" />
+
+                        <TextView
+                            android:id="@+id/measure_calculation_vol_val"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:selectAllOnFocus="false"
+                            android:text="-"
+                            android:textColor="@color/red"
+                            app:layout_constraintBottom_toBottomOf="@id/measure_calculation_vol_title"
+                            app:layout_constraintStart_toEndOf="@id/measure_calculation_vol_title"
+                            app:layout_constraintTop_toTopOf="@id/measure_calculation_vol_title"
+                            tools:ignore="HardcodedText,TextContrastCheck" />
+
+                        <TextView
+                            android:id="@+id/measure_calculation_vol_type"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:selectAllOnFocus="false"
+                            android:text="@string/volume_measurement_val"
+                            app:layout_constraintBottom_toBottomOf="@id/measure_calculation_vol_val"
+                            app:layout_constraintStart_toEndOf="@id/measure_calculation_vol_val"
+                            app:layout_constraintTop_toTopOf="@id/measure_calculation_vol_val" />
+
+                        <TextView
+                            android:id="@+id/measure_calculation_flow_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="5dp"
+                            android:text="@string/fl_appearance_calculation_flow_title"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/measure_calculation_vol_title" />
+
+                        <TextView
+                            android:id="@+id/measure_calculation_flow_val"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:selectAllOnFocus="false"
+                            android:text="-"
+                            android:textColor="@color/red"
+                            app:layout_constraintBottom_toBottomOf="@id/measure_calculation_flow_title"
+                            app:layout_constraintStart_toEndOf="@id/measure_calculation_flow_title"
+                            app:layout_constraintTop_toTopOf="@id/measure_calculation_flow_title"
+                            tools:ignore="HardcodedText,TextContrastCheck" />
+
+                        <TextView
+                            android:id="@+id/measure_calculation_flow_type"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:selectAllOnFocus="false"
+                            android:text="@string/flow_measurement_val"
+                            app:layout_constraintBottom_toBottomOf="@id/measure_calculation_flow_val"
+                            app:layout_constraintStart_toEndOf="@id/measure_calculation_flow_val"
+                            app:layout_constraintTop_toTopOf="@id/measure_calculation_flow_val" />
+
+                        <TextView
+                            android:id="@+id/inflow_calculation_flow_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:text="@string/inflow_calculation"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/measure_calculation_flow_title" />
+
+                        <TextView
+                            android:id="@+id/inflow_calculation_flow_val"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:selectAllOnFocus="false"
+                            android:text="-"
+                            android:textColor="@color/red"
+                            app:layout_constraintBottom_toBottomOf="@id/inflow_calculation_flow_title"
+                            app:layout_constraintStart_toEndOf="@id/inflow_calculation_flow_title"
+                            app:layout_constraintTop_toTopOf="@id/inflow_calculation_flow_title"
+                            tools:ignore="HardcodedText,TextContrastCheck" />
+
+                        <TextView
+                            android:id="@+id/inflow_calculation_flow_type"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:selectAllOnFocus="false"
+                            android:text="@string/flow_measurement_val"
+                            app:layout_constraintBottom_toBottomOf="@id/inflow_calculation_flow_val"
+                            app:layout_constraintStart_toEndOf="@id/inflow_calculation_flow_val"
+                            app:layout_constraintTop_toTopOf="@id/inflow_calculation_flow_val" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </ScrollView>
+
+        </FrameLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/time_button_layout"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="@drawable/backgroung_for_layout"
+            android:elevation="12dp"
+            android:theme="@style/VectorTint"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/watch_timer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="00:00:00"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/button_activity"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="HardcodedText" />
+
+            <Button
+                android:id="@+id/button_activity"
+                android:layout_width="170dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/square_white_with_border"
+                android:elevation="17dp"
+                android:text="@string/button_waiting"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="DuplicateSpeakableTextCheck,HardcodedText" />
+
+            <ImageView
+                android:id="@+id/cleaner"
+                style="@style/VectorTint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/cleaner"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/button_activity"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription,ImageContrastCheck" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

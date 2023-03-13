@@ -1,0 +1,1441 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/Theme.ESPSpecialistHelper">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppBarTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:theme="@style/VectorStroke"
+                app:navigationIcon="@drawable/icon_back"
+                app:title="@string/menu1_button1" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:theme="@style/Theme.ESPSpecialistHelper"
+            android:paddingTop="?attr/actionBarSize"
+            app:layout_constraintBottom_toBottomOf="?attr/actionBarSize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:ignore="UselessParent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <HorizontalScrollView
+                        android:id="@+id/set1"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/square_white"
+                        android:elevation="12dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/constLayout2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/stantion_recomendation"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/recommendation"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toEndOf="@+id/stantion_img"
+                                app:layout_constraintTop_toTopOf="@+id/stantion_img" />
+
+                            <ImageView
+                                android:id="@+id/stantion_img"
+                                android:layout_width="120dp"
+                                android:layout_height="120dp"
+                                android:layout_marginStart="10dp"
+                                android:src="@drawable/electrical_panel"
+                                android:theme="@style/VectorStroke"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:ignore="ContentDescription" />
+
+                            <TextView
+                                android:id="@+id/stantion_current"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="3dp"
+                                android:text="@string/stantion_current_res_title"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toEndOf="@+id/stantion_img"
+                                app:layout_constraintTop_toBottomOf="@+id/stantion_recomendation" />
+
+                            <TextView
+                                android:id="@+id/stantion_current_res"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="3dp"
+                                android:text="-"
+                                android:textColor="@color/red"
+                                android:textSize="14sp"
+                                app:layout_constraintStart_toEndOf="@+id/stantion_img"
+                                app:layout_constraintTop_toBottomOf="@+id/stantion_current"
+                                tools:ignore="HardcodedText" />
+
+                            <TextView
+                                android:id="@+id/stantion_current_type"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:text="@string/current_measurement_val"
+                                android:textSize="14sp"
+                                app:layout_constraintStart_toEndOf="@+id/stantion_current_res"
+                                app:layout_constraintTop_toTopOf="@+id/stantion_current_res" />
+
+                            <TextView
+                                android:id="@+id/stantion_output_current"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="3dp"
+                                android:text="@string/stantion_out_current_res_title"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toEndOf="@+id/stantion_img"
+                                app:layout_constraintTop_toBottomOf="@+id/stantion_current_res" />
+
+                            <TextView
+                                android:id="@+id/stantion_out_current_res"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="3dp"
+                                android:text="-"
+                                android:textColor="@color/red"
+                                android:textSize="14sp"
+                                app:layout_constraintStart_toEndOf="@+id/stantion_img"
+                                app:layout_constraintTop_toBottomOf="@+id/stantion_output_current"
+                                tools:ignore="HardcodedText" />
+
+                            <TextView
+                                android:id="@+id/stantion_current_res_type"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:text="@string/current_measurement_val"
+                                android:textSize="14sp"
+                                app:layout_constraintStart_toEndOf="@+id/stantion_out_current_res"
+                                app:layout_constraintTop_toTopOf="@+id/stantion_out_current_res" />
+
+                            <ImageView
+                                android:id="@+id/transformer_img"
+                                android:layout_width="120dp"
+                                android:layout_height="120dp"
+                                android:layout_marginStart="10dp"
+                                android:src="@drawable/transformer"
+                                android:theme="@style/VectorStroke"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/stantion_current"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:ignore="ContentDescription" />
+
+                            <TextView
+                                android:id="@+id/transformer_recomendation"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/recommendation"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toEndOf="@+id/transformer_img"
+                                app:layout_constraintTop_toTopOf="@+id/transformer_img" />
+
+                            <TextView
+                                android:id="@+id/transformet_power"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="3dp"
+                                android:text="@string/transformer_power_res_title"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toEndOf="@+id/transformer_img"
+                                app:layout_constraintTop_toBottomOf="@+id/transformer_recomendation" />
+
+                            <TextView
+                                android:id="@+id/transformet_power_res_val"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="3dp"
+                                android:text="-"
+                                android:textColor="@color/red"
+                                android:textSize="14sp"
+                                app:layout_constraintStart_toEndOf="@+id/transformer_img"
+                                app:layout_constraintTop_toBottomOf="@+id/transformet_power"
+                                tools:ignore="HardcodedText" />
+
+                            <TextView
+                                android:id="@+id/transformet_power_res_type"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:text="@string/power_measurement_val"
+                                android:textSize="14sp"
+                                app:layout_constraintStart_toEndOf="@+id/transformet_power_res_val"
+                                app:layout_constraintTop_toTopOf="@+id/transformet_power_res_val" />
+
+                            <TextView
+                                android:id="@+id/transformet_tap"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/transforner_tap_res_title"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toEndOf="@+id/transformer_img"
+                                app:layout_constraintTop_toBottomOf="@+id/transformet_power_res_val" />
+
+                            <TextView
+                                android:id="@+id/transformet_tap_res_val"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="-"
+                                android:textColor="@color/red"
+                                android:textSize="14sp"
+                                app:layout_constraintStart_toEndOf="@+id/transformer_img"
+                                app:layout_constraintTop_toBottomOf="@+id/transformet_tap"
+                                tools:ignore="HardcodedText" />
+
+                            <TextView
+                                android:id="@+id/transformet_tap_res_type"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:text="@string/voltage_measurement_val"
+                                android:textSize="14sp"
+                                app:layout_constraintStart_toEndOf="@+id/transformet_tap_res_val"
+                                app:layout_constraintTop_toTopOf="@+id/transformet_tap_res_val" />
+
+                            <ImageView
+                                android:id="@+id/cable_img"
+                                android:layout_width="120dp"
+                                android:layout_height="120dp"
+                                android:layout_marginStart="10dp"
+                                android:src="@drawable/cable"
+                                android:theme="@style/VectorStroke"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/transformet_power"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:ignore="ContentDescription" />
+
+                            <TextView
+                                android:id="@+id/cable_voltage_drop"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="3dp"
+                                android:text="@string/cable_res_drop_voltage"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toEndOf="@+id/cable_img"
+                                app:layout_constraintTop_toTopOf="@+id/cable_img" />
+
+                            <TextView
+                                android:id="@+id/cable_voltage_drop_res_val"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="3dp"
+                                android:text="-"
+                                android:textColor="@color/red"
+                                android:textSize="14sp"
+                                app:layout_constraintStart_toEndOf="@+id/cable_img"
+                                app:layout_constraintTop_toBottomOf="@+id/cable_voltage_drop"
+                                tools:ignore="HardcodedText" />
+
+                            <TextView
+                                android:id="@+id/cable_voltage_drop_res_type"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:text="@string/voltage_measurement_val"
+                                android:textSize="14sp"
+                                app:layout_constraintStart_toEndOf="@+id/cable_voltage_drop_res_val"
+                                app:layout_constraintTop_toTopOf="@+id/cable_voltage_drop_res_val" />
+
+                            <TextView
+                                android:id="@+id/cable_total_Length"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="3dp"
+                                android:text="@string/cable_total_length"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toEndOf="@+id/cable_img"
+                                app:layout_constraintTop_toBottomOf="@+id/cable_voltage_drop_res_val" />
+
+                            <TextView
+                                android:id="@+id/cable_total_length_res_val"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="3dp"
+                                android:text="-"
+                                android:textColor="@color/red"
+                                android:textSize="14sp"
+                                app:layout_constraintStart_toEndOf="@+id/cable_img"
+                                app:layout_constraintTop_toBottomOf="@+id/cable_total_Length"
+                                tools:ignore="HardcodedText" />
+
+                            <TextView
+                                android:id="@+id/cable_total_length_type"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:text="@string/length_measurement_val"
+                                android:textSize="14sp"
+                                app:layout_constraintStart_toEndOf="@+id/cable_total_length_res_val"
+                                app:layout_constraintTop_toTopOf="@+id/cable_total_length_res_val" />
+
+                            <ImageView
+                                android:id="@+id/motor_img"
+                                android:layout_width="120dp"
+                                android:layout_height="120dp"
+                                android:layout_marginStart="10dp"
+                                android:src="@drawable/motor"
+                                android:theme="@style/VectorStroke"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/cable_voltage_drop"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:ignore="ContentDescription" />
+
+                            <TextView
+                                android:id="@+id/motor_voltage_res1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="3dp"
+                                android:text="@string/motor_voltage_res1"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toEndOf="@+id/motor_img"
+                                app:layout_constraintTop_toTopOf="@+id/motor_img" />
+
+                            <TextView
+                                android:id="@+id/motor_voltage_freq_val1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="-"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toEndOf="@+id/motor_voltage_res1"
+                                app:layout_constraintTop_toTopOf="@+id/motor_img"
+                                tools:ignore="HardcodedText" />
+
+                            <TextView
+                                android:id="@+id/motor_voltage_res2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/frequency_measurement_val"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toEndOf="@+id/motor_voltage_freq_val1"
+                                app:layout_constraintTop_toTopOf="@+id/motor_img" />
+
+                            <TextView
+                                android:id="@+id/motor_voltage_val"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:text="-"
+                                android:textColor="@color/red"
+                                android:textSize="14sp"
+                                app:layout_constraintStart_toEndOf="@+id/motor_voltage_res2"
+                                app:layout_constraintTop_toTopOf="@+id/motor_voltage_res2"
+                                tools:ignore="HardcodedText" />
+
+                            <TextView
+                                android:id="@+id/motor_power_res1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="3dp"
+                                android:text="P("
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toEndOf="@+id/motor_img"
+                                app:layout_constraintTop_toBottomOf="@+id/motor_voltage_res1"
+                                tools:ignore="HardcodedText" />
+
+                            <TextView
+                                android:id="@+id/motor_power_freq_val1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/power_type_HP"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toEndOf="@+id/motor_power_res1"
+                                app:layout_constraintTop_toTopOf="@+id/motor_power_res1" />
+
+                            <TextView
+                                android:id="@+id/motor_power_res2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=")@"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toEndOf="@+id/motor_power_freq_val1"
+                                app:layout_constraintTop_toTopOf="@+id/motor_power_res1"
+                                tools:ignore="HardcodedText" />
+
+                            <TextView
+                                android:id="@+id/motor_power_freq_val2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="-"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toEndOf="@+id/motor_power_res2"
+                                app:layout_constraintTop_toTopOf="@+id/motor_power_res2"
+                                tools:ignore="HardcodedText" />
+
+                            <TextView
+                                android:id="@+id/motor_power_res3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/frequency_measurement_val"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toEndOf="@+id/motor_power_freq_val2"
+                                app:layout_constraintTop_toTopOf="@+id/motor_power_freq_val2" />
+
+                            <TextView
+                                android:id="@+id/motor_power_val"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:text="-"
+                                android:textColor="@color/red"
+                                android:textSize="14sp"
+                                app:layout_constraintStart_toEndOf="@+id/motor_power_res3"
+                                app:layout_constraintTop_toTopOf="@+id/motor_power_res3"
+                                tools:ignore="HardcodedText" />
+
+                            <TextView
+                                android:id="@+id/motor_power2_res1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="3dp"
+                                android:text="P("
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toEndOf="@+id/motor_img"
+                                app:layout_constraintTop_toBottomOf="@+id/motor_power_res1"
+                                tools:ignore="HardcodedText" />
+
+                            <TextView
+                                android:id="@+id/motor_power2_freq_val1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/power_type_kvt"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toEndOf="@+id/motor_power2_res1"
+                                app:layout_constraintTop_toTopOf="@+id/motor_power2_res1" />
+
+                            <TextView
+                                android:id="@+id/motor_power2_res2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=")@"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toEndOf="@+id/motor_power2_freq_val1"
+                                app:layout_constraintTop_toTopOf="@+id/motor_power2_res1"
+                                tools:ignore="HardcodedText" />
+
+                            <TextView
+                                android:id="@+id/motor_power2_freq_val2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="-"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toEndOf="@+id/motor_power2_res2"
+                                app:layout_constraintTop_toTopOf="@+id/motor_power2_res2"
+                                tools:ignore="HardcodedText" />
+
+                            <TextView
+                                android:id="@+id/motor_power2_res3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/frequency_measurement_val"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toEndOf="@+id/motor_power2_freq_val2"
+                                app:layout_constraintTop_toTopOf="@+id/motor_power2_freq_val2" />
+
+                            <TextView
+                                android:id="@+id/motor_power2_val"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:text="-"
+                                android:textColor="@color/red"
+                                android:textSize="14sp"
+                                app:layout_constraintStart_toEndOf="@+id/motor_power2_res3"
+                                app:layout_constraintTop_toTopOf="@+id/motor_power2_res3"
+                                tools:ignore="HardcodedText" />
+
+                            <TextView
+                                android:id="@+id/motor_curent_res"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="3dp"
+                                android:text="@string/motor_curent"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toEndOf="@+id/motor_img"
+                                app:layout_constraintTop_toBottomOf="@+id/motor_power2_res1" />
+
+                            <TextView
+                                android:id="@+id/motor_curent_res_val"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:text="-"
+                                android:textColor="@color/red"
+                                android:textSize="14sp"
+                                app:layout_constraintStart_toEndOf="@+id/motor_curent_res"
+                                app:layout_constraintTop_toTopOf="@+id/motor_curent_res"
+                                tools:ignore="HardcodedText" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </HorizontalScrollView>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/set2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/square_white"
+                        android:elevation="12dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/set1">
+
+                        <TextView
+                            android:id="@+id/motor_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="30dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="30dp"
+                            android:text="@string/motor_title"
+                            android:textSize="24sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/info_set1"
+                            style="@style/VectorTint"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="5dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/about_selector"
+                            tools:ignore="ContentDescription" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/textInputLayout"
+                            style="@style/TextInputLayoutStyle"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="5dp"
+                            android:hint="@string/motor_voltage"
+                            app:hintTextAppearance="@style/TextLabel"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/textInputLayout2"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintHorizontal_chainStyle="packed"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/motor_title">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/motor_voltage"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:imeOptions="actionDone"
+                                android:inputType="number|numberDecimal"
+                                android:longClickable="false"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="10dp"
+                                android:textAlignment="center"
+                                android:textSize="16sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/textInputLayout2"
+                            style="@style/TextInputLayoutStyle"
+                            android:layout_width="80dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:hint="@string/motor_power"
+                            app:hintTextAppearance="@style/TextLabel"
+                            app:layout_constraintBottom_toBottomOf="@+id/textInputLayout"
+                            app:layout_constraintEnd_toStartOf="@+id/powerType"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/textInputLayout"
+                            app:layout_constraintTop_toTopOf="@+id/textInputLayout">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/motor_power"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:imeOptions="actionDone"
+                                android:inputType="number|numberDecimal"
+                                android:longClickable="false"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="10dp"
+                                android:textAlignment="center"
+                                android:textSize="16sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/powerType"
+                            android:layout_width="70dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="3dp"
+                            android:layout_marginTop="5dp"
+                            android:clipToPadding="false"
+                            android:orientation="horizontal"
+                            android:paddingLeft="30dp"
+                            android:paddingEnd="30dp"
+                            android:paddingRight="30dp"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            app:layout_constraintBottom_toBottomOf="@+id/textInputLayout2"
+                            app:layout_constraintEnd_toStartOf="@+id/textInputLayout3"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/textInputLayout2"
+                            app:layout_constraintTop_toTopOf="@+id/textInputLayout2"
+                            tools:ignore="MissingConstraints"
+                            tools:listitem="@layout/picker" />
+
+                        <ImageView
+                            android:id="@+id/imageView10"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:src="@drawable/layer_list"
+                            android:theme="@style/SelectorStyle"
+                            app:layout_constraintBottom_toBottomOf="@+id/powerType"
+                            app:layout_constraintEnd_toEndOf="@+id/powerType"
+                            app:layout_constraintStart_toStartOf="@+id/powerType"
+                            app:layout_constraintTop_toTopOf="@+id/powerType"
+                            tools:ignore="ContentDescription" />
+
+                        <ImageView
+                            android:id="@+id/imageView11"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/square"
+                            android:theme="@style/VectorStroke"
+                            app:layout_constraintBottom_toBottomOf="@+id/powerType"
+                            app:layout_constraintEnd_toEndOf="@+id/powerType"
+                            app:layout_constraintStart_toStartOf="@+id/powerType"
+                            app:layout_constraintTop_toTopOf="@+id/powerType"
+                            tools:ignore="ContentDescription" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/textInputLayout3"
+                            style="@style/TextInputLayoutStyle"
+                            android:layout_width="80dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:hint="@string/motor_curent"
+                            app:hintTextAppearance="@style/TextLabel"
+                            app:layout_constraintBottom_toBottomOf="@+id/textInputLayout2"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/powerType"
+                            app:layout_constraintTop_toTopOf="@+id/textInputLayout2">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/motor_curent"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:imeOptions="actionDone"
+                                android:inputType="number|numberDecimal"
+                                android:longClickable="false"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="10dp"
+                                android:textAlignment="center"
+                                android:textSize="16sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/set3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/square_white"
+                        android:elevation="12dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/set2">
+
+                        <TextView
+                            android:id="@+id/cable_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="30dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="30dp"
+                            android:selectAllOnFocus="false"
+                            android:text="@string/cable_title"
+                            android:textSize="24sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/info_set2"
+                            style="@style/VectorTint"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="5dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/about_selector"
+                            tools:ignore="ContentDescription" />
+
+                        <TextView
+                            android:id="@+id/title4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:text="1:"
+                            android:textSize="18sp"
+                            app:layout_constraintEnd_toStartOf="@+id/title5"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintHorizontal_chainStyle="packed"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/cable_title"
+                            tools:ignore="HardcodedText" />
+
+                        <TextView
+                            android:id="@+id/title7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:text="2:"
+                            android:textSize="18sp"
+                            app:layout_constraintEnd_toStartOf="@+id/title8"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintHorizontal_chainStyle="packed"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textInputLayout4"
+                            tools:ignore="HardcodedText" />
+
+                        <TextView
+                            android:id="@+id/title10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginBottom="20dp"
+                            android:text="3:"
+                            android:textSize="18sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/title11"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintHorizontal_chainStyle="packed"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textInputLayout5"
+                            tools:ignore="HardcodedText" />
+
+                        <TextView
+                            android:id="@+id/title5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="3dp"
+                            android:text="@string/cable_crossection"
+                            android:textSize="18sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/title4"
+                            app:layout_constraintEnd_toStartOf="@+id/cable_crossection"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/title4"
+                            app:layout_constraintTop_toTopOf="@+id/title4" />
+
+                        <TextView
+                            android:id="@+id/title8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="3dp"
+                            android:text="@string/cable_crossection"
+                            android:textSize="18sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/title7"
+                            app:layout_constraintEnd_toStartOf="@+id/cable_crossection2"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/title7"
+                            app:layout_constraintTop_toTopOf="@+id/title7" />
+
+                        <TextView
+                            android:id="@+id/title11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="3dp"
+                            android:text="@string/cable_crossection"
+                            android:textSize="18sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/title10"
+                            app:layout_constraintEnd_toStartOf="@+id/cable_crossection3"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/title10"
+                            app:layout_constraintTop_toTopOf="@+id/title10" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/cable_crossection"
+                            android:layout_width="70dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="3dp"
+                            android:clipToPadding="false"
+                            android:orientation="horizontal"
+                            android:paddingLeft="30dp"
+                            android:paddingEnd="30dp"
+                            android:paddingRight="30dp"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            app:layout_constraintBottom_toBottomOf="@+id/title5"
+                            app:layout_constraintEnd_toStartOf="@+id/textInputLayout4"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/title5"
+                            app:layout_constraintTop_toTopOf="@+id/title5"
+                            tools:ignore="MissingConstraints"
+                            tools:listitem="@layout/picker" />
+
+                        <ImageView
+                            android:id="@+id/imageView2"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:src="@drawable/layer_list"
+                            android:theme="@style/SelectorStyle"
+                            app:layout_constraintBottom_toBottomOf="@+id/cable_crossection"
+                            app:layout_constraintEnd_toEndOf="@+id/cable_crossection"
+                            app:layout_constraintStart_toStartOf="@+id/cable_crossection"
+                            app:layout_constraintTop_toTopOf="@+id/cable_crossection"
+                            tools:ignore="ContentDescription" />
+
+                        <ImageView
+                            android:id="@+id/imageView"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/square"
+                            android:theme="@style/VectorStroke"
+                            app:layout_constraintBottom_toBottomOf="@+id/cable_crossection"
+                            app:layout_constraintEnd_toEndOf="@+id/cable_crossection"
+                            app:layout_constraintStart_toStartOf="@+id/cable_crossection"
+                            app:layout_constraintTop_toTopOf="@+id/cable_crossection"
+                            tools:ignore="ContentDescription" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/textInputLayout4"
+                            style="@style/TextInputLayoutStyle"
+                            android:layout_width="110dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="3dp"
+                            android:hint="@string/cable_length"
+                            app:hintTextAppearance="@style/TextLabel"
+                            app:layout_constraintBottom_toBottomOf="@+id/cable_crossection"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/cable_crossection"
+                            app:layout_constraintTop_toTopOf="@+id/cable_crossection">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/cable_length"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:imeOptions="actionDone"
+                                android:inputType="number|numberDecimal"
+                                android:longClickable="false"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="10dp"
+                                android:textAlignment="center"
+                                android:textSize="16sp"
+                                tools:ignore="DuplicateSpeakableTextCheck" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/cable_crossection2"
+                            android:layout_width="70dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="3dp"
+                            android:clipToPadding="false"
+                            android:orientation="horizontal"
+                            android:paddingLeft="30dp"
+                            android:paddingEnd="30dp"
+                            android:paddingRight="30dp"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            app:layout_constraintBottom_toBottomOf="@+id/title8"
+                            app:layout_constraintEnd_toStartOf="@+id/textInputLayout5"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/title8"
+                            app:layout_constraintTop_toTopOf="@+id/title8"
+                            tools:ignore="MissingConstraints"
+                            tools:listitem="@layout/picker" />
+
+                        <ImageView
+                            android:id="@+id/imageView2_2"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:src="@drawable/layer_list"
+                            android:theme="@style/SelectorStyle"
+                            app:layout_constraintBottom_toBottomOf="@+id/cable_crossection2"
+                            app:layout_constraintEnd_toEndOf="@+id/cable_crossection2"
+                            app:layout_constraintStart_toStartOf="@+id/cable_crossection2"
+                            app:layout_constraintTop_toTopOf="@+id/cable_crossection2"
+                            tools:ignore="ContentDescription" />
+
+                        <ImageView
+                            android:id="@+id/imageView_2"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/square"
+                            android:theme="@style/VectorStroke"
+                            app:layout_constraintBottom_toBottomOf="@+id/cable_crossection2"
+                            app:layout_constraintEnd_toEndOf="@+id/cable_crossection2"
+                            app:layout_constraintStart_toStartOf="@+id/cable_crossection2"
+                            app:layout_constraintTop_toTopOf="@+id/cable_crossection2"
+                            tools:ignore="ContentDescription,TooManyViews" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/textInputLayout5"
+                            style="@style/TextInputLayoutStyle"
+                            android:layout_width="110dp"
+                            android:layout_height="53dp"
+                            android:layout_marginStart="3dp"
+                            android:hint="@string/cable_length"
+                            app:hintTextAppearance="@style/TextLabel"
+                            app:layout_constraintBottom_toBottomOf="@+id/cable_crossection2"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/cable_crossection2"
+                            app:layout_constraintTop_toTopOf="@+id/cable_crossection2">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/cable_length2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:enabled="false"
+                                android:imeOptions="actionDone"
+                                android:inputType="number|numberDecimal"
+                                android:longClickable="false"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="10dp"
+                                android:textAlignment="center"
+                                android:textSize="16sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/cable_crossection3"
+                            android:layout_width="70dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="3dp"
+                            android:clipToPadding="false"
+                            android:orientation="horizontal"
+                            android:paddingLeft="30dp"
+                            android:paddingEnd="30dp"
+                            android:paddingRight="30dp"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            app:layout_constraintBottom_toBottomOf="@+id/title11"
+                            app:layout_constraintEnd_toStartOf="@+id/textInputLayout6"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/title11"
+                            app:layout_constraintTop_toTopOf="@+id/title11"
+                            tools:ignore="MissingConstraints"
+                            tools:listitem="@layout/picker" />
+
+                        <ImageView
+                            android:id="@+id/imageView2_3"
+                            android:layout_width="0dp"
+                            android:layout_height="25dp"
+                            android:src="@drawable/layer_list"
+                            android:theme="@style/SelectorStyle"
+                            app:layout_constraintBottom_toBottomOf="@+id/cable_crossection3"
+                            app:layout_constraintEnd_toEndOf="@+id/cable_crossection3"
+                            app:layout_constraintStart_toStartOf="@+id/cable_crossection3"
+                            app:layout_constraintTop_toTopOf="@+id/cable_crossection3"
+                            tools:ignore="ContentDescription" />
+
+                        <ImageView
+                            android:id="@+id/imageView_3"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/square"
+                            android:theme="@style/VectorStroke"
+                            app:layout_constraintBottom_toBottomOf="@+id/cable_crossection3"
+                            app:layout_constraintEnd_toEndOf="@+id/cable_crossection3"
+                            app:layout_constraintStart_toStartOf="@+id/cable_crossection3"
+                            app:layout_constraintTop_toTopOf="@+id/cable_crossection3"
+                            tools:ignore="ContentDescription" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/textInputLayout6"
+                            style="@style/TextInputLayoutStyle"
+                            android:layout_width="110dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="3dp"
+                            android:hint="@string/cable_length"
+                            app:hintTextAppearance="@style/TextLabel"
+                            app:layout_constraintBottom_toBottomOf="@+id/cable_crossection3"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/cable_crossection3"
+                            app:layout_constraintTop_toTopOf="@+id/cable_crossection3">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/cable_length3"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:enabled="false"
+                                android:imeOptions="actionDone"
+                                android:inputType="number|numberDecimal"
+                                android:longClickable="false"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="10dp"
+                                android:textAlignment="center"
+                                android:textSize="16sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/set4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/square_white"
+                        android:elevation="12dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/set3">
+
+                        <TextView
+                            android:id="@+id/stantion_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="30dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="30dp"
+                            android:text="@string/stantion_title"
+                            android:textSize="24sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/info_set3"
+                            style="@style/VectorTint"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="5dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/about_selector"
+                            tools:ignore="ContentDescription" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/stantion_freq_base"
+                            android:layout_width="70dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="3dp"
+                            android:clipToPadding="false"
+                            android:orientation="horizontal"
+                            android:paddingLeft="30dp"
+                            android:paddingEnd="30dp"
+                            android:paddingRight="30dp"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            app:layout_constraintBottom_toBottomOf="@+id/title22"
+                            app:layout_constraintEnd_toStartOf="@+id/textInputLayout7"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/title22"
+                            app:layout_constraintTop_toTopOf="@+id/title22"
+                            tools:ignore="MissingConstraints"
+                            tools:listitem="@layout/picker" />
+
+                        <ImageView
+                            android:id="@+id/imageView12"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:src="@drawable/layer_list"
+                            android:theme="@style/SelectorStyle"
+                            app:layout_constraintBottom_toBottomOf="@+id/stantion_freq_base"
+                            app:layout_constraintEnd_toEndOf="@+id/stantion_freq_base"
+                            app:layout_constraintStart_toStartOf="@+id/stantion_freq_base"
+                            app:layout_constraintTop_toTopOf="@+id/stantion_freq_base"
+                            tools:ignore="ContentDescription" />
+
+                        <ImageView
+                            android:id="@+id/imageView13"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/square"
+                            android:theme="@style/VectorStroke"
+                            app:layout_constraintBottom_toBottomOf="@+id/stantion_freq_base"
+                            app:layout_constraintEnd_toEndOf="@+id/stantion_freq_base"
+                            app:layout_constraintStart_toStartOf="@+id/stantion_freq_base"
+                            app:layout_constraintTop_toTopOf="@+id/stantion_freq_base"
+                            tools:ignore="ContentDescription" />
+
+                        <TextView
+                            android:id="@+id/title22"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginBottom="20dp"
+                            android:text="@string/stantion_base_freq"
+                            android:textSize="18sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/stantion_freq_base"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintHorizontal_chainStyle="packed"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/stantion_title" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/textInputLayout7"
+                            style="@style/TextInputLayoutStyle"
+                            android:layout_width="95dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="3dp"
+                            android:hint="@string/stantion_output_voltage"
+                            app:hintTextAppearance="@style/TextLabel"
+                            app:layout_constraintBottom_toBottomOf="@+id/stantion_freq_base"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/stantion_freq_base"
+                            app:layout_constraintTop_toTopOf="@+id/stantion_freq_base">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/stantion_output_voltage"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:imeOptions="actionDone"
+                                android:inputType="number|numberDecimal"
+                                android:longClickable="false"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="10dp"
+                                android:textAlignment="center"
+                                android:textSize="16sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/set5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/square_white"
+                        android:elevation="12dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/set4">
+
+                        <TextView
+                            android:id="@+id/transformer_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="30dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="30dp"
+                            android:text="@string/transformer_title"
+                            android:textSize="24sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/info_set4"
+                            style="@style/VectorTint"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="5dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/about_selector"
+                            tools:ignore="ContentDescription" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/textInputLayout8"
+                            style="@style/TextInputLayoutStyle"
+                            android:layout_width="90dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="5dp"
+                            android:hint="@string/transformer_power"
+                            app:hintTextAppearance="@style/TextLabel"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/textInputLayout9"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintHorizontal_chainStyle="packed"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/transformer_title">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/trans_output_voltage"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:imeOptions="actionDone"
+                                android:inputType="number|numberDecimal"
+                                android:longClickable="false"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="10dp"
+                                android:textAlignment="center"
+                                android:textSize="16sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/textInputLayout9"
+                            style="@style/TextInputLayoutStyle"
+                            android:layout_width="90dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="3dp"
+                            android:hint="@string/transformer_impedance"
+                            app:hintTextAppearance="@style/TextLabel"
+                            app:layout_constraintBottom_toBottomOf="@+id/textInputLayout8"
+                            app:layout_constraintEnd_toStartOf="@+id/title18"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/textInputLayout8"
+                            app:layout_constraintTop_toTopOf="@+id/textInputLayout8">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/trans_impedans"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:imeOptions="actionDone"
+                                android:inputType="number|numberDecimal"
+                                android:longClickable="false"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="10dp"
+                                android:textAlignment="center"
+                                android:textSize="16sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <TextView
+                            android:id="@+id/title18"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="3dp"
+                            android:text="@string/transformer_lsv"
+                            android:textSize="18sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/textInputLayout9"
+                            app:layout_constraintEnd_toStartOf="@+id/transformer_lsv"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/textInputLayout9"
+                            app:layout_constraintTop_toTopOf="@+id/textInputLayout9" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/transformer_lsv"
+                            android:layout_width="70dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="3dp"
+                            android:clipToPadding="false"
+                            android:orientation="horizontal"
+                            android:paddingLeft="30dp"
+                            android:paddingEnd="30dp"
+                            android:paddingRight="30dp"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            app:layout_constraintBottom_toBottomOf="@+id/title18"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/title18"
+                            app:layout_constraintTop_toTopOf="@+id/title18"
+                            tools:ignore="MissingConstraints"
+                            tools:listitem="@layout/picker" />
+
+                        <ImageView
+                            android:id="@+id/imageView8"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:src="@drawable/layer_list"
+                            android:theme="@style/SelectorStyle"
+                            app:layout_constraintBottom_toBottomOf="@+id/transformer_lsv"
+                            app:layout_constraintEnd_toEndOf="@+id/transformer_lsv"
+                            app:layout_constraintStart_toStartOf="@+id/transformer_lsv"
+                            app:layout_constraintTop_toTopOf="@+id/transformer_lsv"
+                            tools:ignore="ContentDescription" />
+
+                        <ImageView
+                            android:id="@+id/imageView9"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/square"
+                            android:theme="@style/VectorStroke"
+                            app:layout_constraintBottom_toBottomOf="@+id/transformer_lsv"
+                            app:layout_constraintEnd_toEndOf="@+id/transformer_lsv"
+                            app:layout_constraintStart_toStartOf="@+id/transformer_lsv"
+                            app:layout_constraintTop_toTopOf="@+id/transformer_lsv"
+                            tools:ignore="ContentDescription" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/set7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/square_white"
+                        android:elevation="12dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/set5">
+
+                        <TextView
+                            android:id="@+id/selection_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="30dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="30dp"
+                            android:text="@string/selection_title"
+                            android:textSize="24sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/info_set5"
+                            style="@style/VectorTint"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="5dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/about_selector"
+                            tools:ignore="ContentDescription" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/textInputLayout11"
+                            style="@style/TextInputLayoutStyle"
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:hint="@string/selection_transformer"
+                            app:hintTextAppearance="@style/TextLabel"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/textInputLayout12"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintHorizontal_chainStyle="packed"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/selection_title">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/trans_power_reserve"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:imeOptions="actionDone"
+                                android:inputType="number|numberDecimal"
+                                android:longClickable="false"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="10dp"
+                                android:textAlignment="center"
+                                android:textSize="16sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/textInputLayout12"
+                            style="@style/TextInputLayoutStyle"
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:hint="@string/selection_stantion"
+                            app:hintTextAppearance="@style/TextLabel"
+                            app:layout_constraintBottom_toBottomOf="@+id/textInputLayout11"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/textInputLayout11"
+                            app:layout_constraintTop_toTopOf="@+id/textInputLayout11">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/stantion_power_reserve"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:imeOptions="actionDone"
+                                android:inputType="number|numberDecimal"
+                                android:longClickable="false"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="10dp"
+                                android:textAlignment="center"
+                                android:textSize="16sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </ScrollView>
+        </FrameLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

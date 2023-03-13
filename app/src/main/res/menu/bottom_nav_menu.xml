@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/fragment1"
+        android:icon="@drawable/electrical_selector"
+        android:title="1"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/fragment2"
+        android:icon="@drawable/pump_selector"
+        android:title="2"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/fragmentSettings"
+        android:icon="@drawable/settings_selector"
+        android:title="" />
+
+    <item
+        android:id="@+id/fragmentAbout"
+        android:icon="@drawable/about_selector"
+        android:title="" />
+
+</menu>

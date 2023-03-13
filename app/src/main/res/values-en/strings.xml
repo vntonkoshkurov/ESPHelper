@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ESP Helper</string>
+    <string name="calc_main_head">Electrical calculations</string>
+    <string name="tap_calc_head">Calculations</string>
+    <string name="calc_res">¯\\_(ツ)_/¯</string>
+    <string name="motor_voltage">U(V)@50Hz</string>
+    <string name="motor_power">P@50Hz</string>
+    <string name="motor_curent">I(A)</string>
+    <string name="cable_title">Cable characteristics</string>
+    <string name="cable_crossection">S,mm2:</string>
+    <string name="cable_length">Length,m</string>
+    <string name="stantion_title">VSD/SWBD characteristics</string>
+    <string name="stantion_voltage">U(nom),V:</string>
+    <string name="stantion_base_freq">Fb,Hz:</string>
+    <string name="stantion_output_voltage">U(b.out), В:</string>
+    <string name="transformer_title">Transformer characteristics</string>
+    <string name="transformer_power">P(kVA)</string>
+    <string name="transformer_impedance">Imp.%</string>
+    <string name="transformer_lsv">U(lvs),V:</string>
+    <string name="selection_title">Surface equip. selection</string>
+    <string name="selection_transformer">Reserve Tr-r, %</string>
+    <string name="selection_stantion">Reserve VSD, %</string>
+    <string name="power_title">Power supply characteristics</string>
+    <string name="power_voltage">Us,V</string>
+    <string name="power_type_kvt">kVt</string>
+    <string name="power_type_HP">HP</string>
+    <string name="stantion_current_res_title">Current rating:</string>
+    <string name="stantion_out_current_res_title">Output current:</string>
+    <string name="transformer_power_res_title">Power rating:</string>
+    <string name="transforner_tap_res_title">Tap:</string>
+    <string name="recommendation">Recommend.</string>
+    <string name="cable_res_drop_voltage">Voltage drop:</string>
+    <string name="motor_voltage_res1">U(V)@</string>
+    <string name="frequency_measurement_val">Hz</string>
+    <string name="power_measurement_val">kVA</string>
+    <string name="voltage_measurement_val">V</string>
+    <string name="current_measurement_val">A</string>
+    <string name="cable_total_length">Cable total len.:</string>
+    <string name="length_measurement_val">m</string>
+    <string name="first_menu_name">Selection of calculations</string>
+    <string name="menu1_button1">Tap calculation</string>
+    <string name="menu1_button2">Motor startup analysis</string>
+    <string name="menu1_button3">Values imbalance</string>
+    <string name="selector_frame_title">Electrical calculations</string>
+    <string name="stantion_oper_freq">Fr,Hz:</string>
+    <string name="transformer_out_voltage">U(tap),V:</string>
+    <string name="se_characteristics">SE settings</string>
+    <string name="transforner_tap_res_title2">Recomm. trans. tap, V:</string>
+    <string name="graf1_title">Motor voltage chart</string>
+    <string name="chart1_txt1">X: U-Motor, (%). Y: U-Motor, (V)</string>
+    <string name="chart1_txt2">Motor volt. without losses, V</string>
+    <string name="chart1_txt3">Motor volt. with losses, V</string>
+    <string name="chart1_txt5">Actual motor voltage, V</string>
+    <string name="chart1_txt4">Motor sturtup voltage, V</string>
+    <string name="actual_out_voltage1">Uout.actual@</string>
+    <string name="actual_out_voltage2">Hz(V):</string>
+    <string name="startup_res_pos">Motor startup is possible</string>
+    <string name="startup_res_neg">Motor startup impossible</string>
+    <string name="current_unballance_header1">Values by phases</string>
+    <string name="current_unballance_val">%</string>
+    <string name="current_unballance_header2">Unbalance</string>
+    <string name="current_phaseA">Phase A</string>
+    <string name="current_phaseB">Phase B</string>
+    <string name="current_phaseC">Phase C</string>
+    <string name="selector_second_frame_title">Downhole equipment calculations</string>
+    <string name="menu2_button1">Pump calculations</string>
+    <string name="pump_title">Pump characteristics</string>
+    <string name="pump_q">Q, m3/d@50Hz</string>
+    <string name="pump_h">H, m@50Hz</string>
+    <string name="pump_p">P@50Hz</string>
+    <string name="pump_s">Stg, qty</string>
+    <string name="tubing_title">Tubings characteristics</string>
+    <string name="pump_oper_val_title">Pump values for F(oper):</string>
+    <string name="pump_q_FOper">Q @</string>
+    <string name="pump_h_FOper">H @</string>
+    <string name="pump_p_FOper">P @</string>
+    <string name="pump_head_characteristics">Head characteristics</string>
+    <string name="well_title">Well characteristics</string>
+    <string name="well_fluid_level">Fluid lvl, m</string>
+    <string name="well_casing_pressure">P(casing)</string>
+    <string name="well_head_pressure">P(head)</string>
+    <string name="well_additional_title">Fill if fluid level undefined</string>
+    <string name="well_intake_pressure">P(intake)</string>
+    <string name="well_fluid_density">Dens. kg/m3</string>
+    <string name="well_liftDepth">Lift depth, m</string>
+    <string name="chart2_txt1">X: F (Hz) Y: H (m</string>
+    <string name="chart2_txt2">BEP line of pump head</string>
+    <string name="chart2_txt3">TDH for oil, m@</string>
+    <string name="chart2_txt4">TDH for water, m@</string>
+    <string name="chart2_txt5">Pump head, m@</string>
+    <string name="tubing_total_length">Tubing total length:</string>
+    <string name="flow_type_title">Type of fluid flow</string>
+    <string name="part1_fl_type_title">Part 1:</string>
+    <string name="flow_type_for_oil_title">- for oil is:</string>
+    <string name="flow_type_for_water_title">- for water is:</string>
+    <string name="part2_fl_type_title">Part 2:</string>
+    <string name="part3_fl_type_title">Part 3:</string>
+    <string name="flow_type_laminar">laminar</string>
+    <string name="flow_type_turbulent1">turbulent, 1st area</string>
+    <string name="flow_type_turbulent2">turbulent, 2nd area</string>
+    <string name="flow_type_turbulent3">turbulent, 3d area</string>
+    <string name="flow_type_transitional">transitional, no calc.</string>
+    <string name="recommendation_title">Recommendation</string>
+    <string name="recommendation1_title">Increace oper. frequency up to:</string>
+    <string name="recommendation2_title">Increace quantity of stages up to:</string>
+    <string name="recommendation3_title">Out of range</string>
+    <string name="dialog_title">Information</string>
+    <string name="motor_title">Motor characteristics</string>
+    <string name="app_version">"Version: "</string>
+
+
+    <!--справочная инфомрация для меню 2_1-->
+    <string name="volume_measurement_val">m3</string>
+    <string name="alert1">"Enter no more than: "</string>
+    <string name="comis_flow_appear_time_title">The appearance of flow</string>
+    <string name="button_timer_start">Sturtup</string>
+    <string name="fl_appearance_time_title">Flow appearance time:</string>
+    <string name="calculation_alert">Negative level change</string>
+    <string name="settings_theme_title">UI Theme</string>
+    <string name="change_theme_dialog">The changes will change after the application is restarted</string>
+    <string name="info1">"
+        <![CDATA[
+        Need to specify the passport characteristics of the pump sections. It is recommended to specify data for the BOP of the pump.
+        ]]>"
+    </string>
+    <string name="info2">"
+        <![CDATA[
+        Enter the total lengths used in the lift of tubing pipes, as well as their types. You can enter no more than three types of pipe sizes. For next calculations, enter at least one section of the tubing pipe.
+        <br />Fill in the sizes used in the lift, starting from the top section.
+        ]]>"
+    </string>
+    <string name="info3">"
+        <![CDATA[
+        For calculations, two main parameters must be entered: static or dynamic level, head pressure. If the level is unknown, but the data of the submersible gauge of the ESP are available, additional data must be enter to calculate the level: the pump intake pressure, the casing pressure and the density of the liquid. After entering all these data, the level in the well will be calculated automatically. It is also necessary to take into account that the calculation of the liquid level is performed for a vertical well.
+        ]]>"
+    </string>
+    <string name="info4">"
+        <![CDATA[
+        BEP line - is a line of best pump efficiency.
+        <br />TDH - total dynamic head.
+        <br />The calculation is performed for a vertical well and degassed liquid at an operating frequency of 35-70 Hz. The data at the efficiency point is taken from the previously entered pump data. The calculations will also be relevant for data not at the BEP (left or right zones), which you can enter in the pump characteristics. In this case, the calculation description will continue to be displayed as for the BEP, but it won't be right.
+        ]]>"
+    </string>
+    <string name="info5">"
+        <![CDATA[
+        The calculated flow types of fluid for pipes based on the Reynolds number. The following data were used for calculations:
+        <br />- Absolute roughness is 0.1 mm, for new steel pipe;
+        <br />- The ambient temperature is 50C;
+        <br />- Kinematic viscosity of water is 5.55 m2/s;
+        <br />- Kinematic viscosity of oil is 20 m2/s (average value);
+        <br />- The flow rate of the pump at the BEP;
+        <br />- The liquid is degassed.
+        <br />These flow modes will be relevant only if the operating point of the BEP line of the pump cross THD lines for oil and water.
+        ]]>"
+    </string>
+    <string name="info6">"
+        <![CDATA[
+        To calculate the fluid appearance time, the following data is required:
+        <br />- pump florate;
+        <br />- length at least one of section of tubing. Fill tubing length according recommendation in corresponding help section;
+        <br />- casing pressure;
+        <br />- fluid level in the well;
+        <br />- fluid density.
+        ]]>"
+    </string>
+    <string name="info7">"
+        <![CDATA[
+        Recommendations provided for the operation of the ESP at the BEP. To recalculate the data, according to the recommendations, you can change the operating frequency. When changing the number of pump stages, also change the pressure value.
+        ]]>"
+    </string>
+
+    <!--справочная инфомрация для меню 2_2-->
+    <string name="info2_2_1">
+        <![CDATA[
+        To calculate the volume of fluid in the well, it is necessary to enter a static or dynamic level. If this level is not known, it will be calculated automatically when entering the data of the downhole sensor. The entered level should not exceed the total length of the tubing. Also, the value of fluid level is automatically recalculated depending on the change in the length of tubing to match the readings of the downhole gauge.
+        ]]>"
+    </string>
+    <string name="info2_2_3">
+        <![CDATA[
+        It is necessary to select the types and lengths of the production column pipes used in the well. For calculations, the length of the pipes of the production column should not be less than the length of the tubing entered earlier. Enter the length values according to the prompts for the remainder of the length. Data on the production column pipe must be entered from top to bottom, according to the well diagram. Also, the program will not allow you to enter the length of the pipe of the production column more than the length of the tubing, since the excess length will not take part in further calculations.
+        ]]>"
+    </string>
+    <string name="info2_2_4">
+        <![CDATA[
+        Here calculations provided of the volumes of pipes used.
+        <br />The volume of fluid is calculated as the sum of the volume of fluid inside the tubing, and the volume of fluid between the pipe of the production column and the tubing.
+        ]]>"
+    </string>
+
+    <!--справочная инфомрация для меню 2_3-->
+
+    <!--справочная инфомрация для меню 1_1-->
+    <string name="info1_1_1">
+        <![CDATA[
+        Enter nominal characteristics values of the electrical motor.
+        ]]>
+    </string>
+    <string name="info1_1_2">
+        <![CDATA[
+        Select and enter characteristics of the cable. You can enter no more than three types of the cable. For next calculations, enter at least one fields.
+        ]]>
+    </string>
+    <string name="info1_1_3">
+        <![CDATA[
+        Enter base frequency of the station and output voltage for base frequency.
+        ]]>
+    </string>
+    <string name="info1_1_4">
+        <![CDATA[
+        Enter nominal characteristics values for transformer. U(lvs) – voltage for low side of transformer.
+        ]]>
+    </string>
+    <string name="info1_1_5">
+        <![CDATA[
+        Enter necessary power reserve for surface equipment.
+        ]]>
+    </string>
+
+    <!--справочная инфомрация для меню 1_2-->
+    <string name="info1_2_1">
+        <![CDATA[
+        Enter nominal characteristics values of the electrical motor
+        ]]>
+    </string>
+    <string name="info1_2_2">
+        <![CDATA[
+        Select and enter characteristics of the cable. You can enter no more than three types of the cable. For next calculations, enter at least one fields.
+        ]]>
+    </string>
+    <string name="info1_2_3">
+        <![CDATA[
+        Enter base and operation frequency of the station. Enter output voltage for base frequency.
+        ]]>
+    </string>
+    <string name="info1_2_4">
+        <![CDATA[
+        Enter nominal characteristics values for transformer. U(lvs) – voltage for low side of transformer.
+        ]]>
+    </string>
+    <string name="info1_2_5">
+        <![CDATA[
+        The voltage that comes to the motor is calculated, taking into account the losses on surface electrical equipment and cable. The calculation is made by the selection method under the following conditions:
+        <br />- to start up the motor, a voltage of at least 50-55% of the nominal is required;
+        <br />- the excess of the startup current at a motor voltage of 50-55% of the nominal should be no more than 2.5-3 times.
+        <br />Thus, the intersection point on the graphs is the calculated voltage that comes to the motor.
+        <br />The actual motor startup depends on many factors and conditions. Treat this calculation as a preliminary assessment.
+        ]]>
+    </string>
+    <!--для фрагмента о программе-->
+    <string name="aboutApp">"
+        <![CDATA[
+        <p><strong>Developer:</strong> vaston</p>
+        <p><strong>Telegram:</strong> vaston_RU</p>
+        <p><strong>E-mail:</strong> <a href="mailto:vntonkoshkurov@yandex.ru">vntonkoshkurov@yandex.ru</a></p></p>
+        <p>Send your wishes and suggestions by e-mail.</p>
+        <p>Y-Money wallet number for donates:<br /><a href="https://yoomoney.ru/to/4100117885611099">4100117885611099</a></p>
+        ]]>"
+    </string>
+    <string name="time_of_flow_appearance">Time of flow appearance</string>
+    <string name="time_measurenent_val">min</string>
+    <string name="time_flow_appearance">Fluid appearance time:</string>
+    <string name="volume">Filling volume:</string>
+    <string name="tubing_total_volume">Total volume:</string>
+    <string name="qty_measurement_val">pcs</string>
+    <string name="casing_title">Casing tubing characteristics</string>
+    <string name="calculations_title">Calculations</string>
+    <string name="total_length_control">Need enter:</string>
+    <string name="menu2_button2">Volume calculations</string>
+    <string name="vol_tubing_title">V1 - Tubing volume by OD:</string>
+    <string name="vol_casing_title">V2 - Casing volume by ID:</string>
+    <string name="vol_res_title">V3 - V1:</string>
+    <string name="vol_tubing_title2">V2 - Tubing volume by ID:</string>
+    <string name="alert_title">Warning</string>
+    <string name="total_fluid_vol_in_well">Fluid volume in the well:</string>
+    <string name="incorrect_level">The level exceeds the length of the pipes</string>
+    <string name="menu2_button3">Comissioning</string>
+    <string name="comis_startup_title">Startup</string>
+    <string name="comis_measurement_title">Measurement</string>
+    <string name="button_timer_flow_appear">Flow appearance</string>
+    <string name="button_timer_measurement">Measurement</string>
+    <string name="button_waiting">Comission</string>
+    <string name="comis_select_activity">Select activity</string>
+    <string name="cancel_title">Cancel</string>
+    <string name="comis_waiting_flow_appearance">Waiting of flow</string>
+    <string name="comis_waiting_measurement">Waiting of measurement</string>
+    <string name="button_add_title">Enter to...</string>
+    <string name="startup_time_title">Sturtup time:</string>
+    <string name="calculation_title">Calculations:</string>
+    <string name="fl_appearance_calculation_vol_title">Pumped volume:</string>
+    <string name="time_waiting">Waiting time, min</string>
+    <string name="fl_appearance_calculation_flow_title">Calc. flow rate:</string>
+    <string name="flow_measurement_val">m3/day</string>
+    <string name="measured_volume">Measured volume, m3</string>
+    <string name="measured_flowrate">Measured florate, m3/day</string>
+    <string name="inflow_calculation">Calc. inflow:</string>
+    <string name="measurement_time_title">Measurement time:</string>
+    <string name="cleaner_dialog1">Need stop the timer before clean the comissioning field.</string>
+    <string name="cleaner_dialog2">Clean comissioning fields?</string>
+    <string name="cleaner_dialog_title">Notification</string>
+    <string name="enter_alert">The level should not be greater than the length of the tubings.</string>
+    <string name="info2_3_3">
+        <![CDATA[
+        Clicking on the input field opens a dialog box. In this window, you must enter the level of liquid in the well. If the level is not known, use additional fields, after filling in which the level will be calculated automatically. Calculations are made for a vertical well.
+        ]]>
+    </string>
+    <string name="info2_3_4">
+        <![CDATA[
+        Enter the time of appearance of the liquid in minutes after the start of the ESP. The time can be filled in automatically when using the built-in timer, which is started by pressing the "Commission" button.
+        <br />Also enter the level of liquid in the well. If the level is not known, use additional fields, after filling in which the level will be calculated automatically. Calculations are made for a vertical well.
+        ]]>
+    </string>
+    <string name="info2_3_5">
+        <![CDATA[
+        Enter values of the liquid level and the waiting time for the measurement activity are similar to the recommendations in previous commission activities. Also enter the volume or the measured flow rate. The "Volume" and "Debit" fields are mutually recalculated when the "Waiting time" field is filled in. Calculations are made for a vertical well.
+        ]]>
+    </string>
+    <string name="settings_dialog_title_res">Change of settings</string>
+    <string name="theme_name_lite_1">White nights</string>
+    <string name="theme_name_lite_2">Like the heart of a loved one</string>
+    <string name="theme_name_lite_3">Light</string>
+    <string name="theme_name_lite_4">Cold as snow</string>
+    <string name="theme_name_dark_1">Dark days</string>
+    <string name="theme_name_dark_2">Like the ex\'s heart</string>
+    <string name="theme_name_dark_3">Dark</string>
+    <string name="theme_name_dark_4">Black as oil</string>
+    <string name="theme_system_theme">As in the system</string>
+</resources>

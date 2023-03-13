@@ -1,0 +1,1238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/volume_tubings"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.volume.VolumeTubings">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppBarTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:theme="@style/VectorStroke"
+                app:navigationIcon="@drawable/icon_back"
+                app:title="@string/menu2_button2" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:theme="@style/Theme.ESPSpecialistHelper"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/appBarLayout">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:ignore="UselessParent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/set1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/square_white"
+                        android:elevation="12dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/well_title"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="30dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="30dp"
+                            android:selectAllOnFocus="false"
+                            android:text="@string/well_title"
+                            android:textAlignment="center"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/info_set1"
+                            style="@style/VectorTint"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="4dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/about_selector"
+                            tools:ignore="ContentDescription" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/well_edittext_1"
+                            style="@style/TextInputLayoutStyle"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="10dp"
+                            android:hint="@string/well_fluid_level"
+                            app:hintTextAppearance="@style/TextLabel"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/well_title">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/well_fluid_level"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:imeOptions="actionDone"
+                                android:inputType="number|numberDecimal"
+                                android:longClickable="false"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="10dp"
+                                android:textAlignment="center"
+                                android:textSize="16sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <TextView
+                            android:id="@+id/level_alert_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="5dp"
+                            android:text="@string/incorrect_level"
+                            android:textColor="@color/red"
+                            android:visibility="gone"
+                            app:layout_constraintStart_toStartOf="@+id/well_edittext_1"
+                            app:layout_constraintTop_toBottomOf="@+id/well_edittext_1" />
+
+                        <TextView
+                            android:id="@+id/well_additional_val_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="@string/well_additional_title"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="@+id/level_alert_title"
+                            app:layout_constraintTop_toBottomOf="@+id/level_alert_title" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/well_edittext_2"
+                            style="@style/TextInputLayoutStyle"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:hint="@string/well_casing_pressure"
+                            app:hintTextAppearance="@style/TextLabel"
+                            app:layout_constraintStart_toStartOf="@id/well_additional_val_title"
+                            app:layout_constraintTop_toBottomOf="@id/well_additional_val_title">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/well_casing_pressure"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:imeOptions="actionDone"
+                                android:inputType="number|numberDecimal"
+                                android:longClickable="false"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="10dp"
+                                android:textAlignment="center"
+                                android:textSize="16sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/well_casing_pressure_type"
+                            android:layout_width="110dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="3dp"
+                            android:clipToPadding="false"
+                            android:orientation="horizontal"
+                            android:paddingLeft="40dp"
+                            android:paddingEnd="40dp"
+                            android:paddingRight="40dp"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            app:layout_constraintBottom_toBottomOf="@id/well_edittext_2"
+                            app:layout_constraintStart_toEndOf="@id/well_edittext_2"
+                            app:layout_constraintTop_toTopOf="@id/well_edittext_2"
+                            tools:ignore="MissingConstraints"
+                            tools:listitem="@layout/picker" />
+
+                        <ImageView
+                            android:id="@+id/well_casing_pressure_type_img1"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:src="@drawable/layer_list"
+                            android:theme="@style/SelectorStyle"
+                            app:layout_constraintBottom_toBottomOf="@id/well_casing_pressure_type"
+                            app:layout_constraintEnd_toEndOf="@id/well_casing_pressure_type"
+                            app:layout_constraintStart_toStartOf="@id/well_casing_pressure_type"
+                            app:layout_constraintTop_toTopOf="@id/well_casing_pressure_type"
+                            tools:ignore="ContentDescription"
+                            tools:layout_editor_absoluteX="78dp"
+                            tools:layout_editor_absoluteY="53dp" />
+
+                        <ImageView
+                            android:id="@+id/well_casing_pressure_type_img2"
+                            android:layout_width="70dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/square2"
+                            android:theme="@style/VectorStroke"
+                            app:layout_constraintBottom_toBottomOf="@id/well_casing_pressure_type"
+                            app:layout_constraintEnd_toEndOf="@id/well_casing_pressure_type"
+                            app:layout_constraintStart_toStartOf="@id/well_casing_pressure_type"
+                            app:layout_constraintTop_toTopOf="@id/well_casing_pressure_type"
+                            tools:ignore="ContentDescription"
+                            tools:layout_editor_absoluteX="108dp"
+                            tools:layout_editor_absoluteY="45dp" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/well_edittext_4"
+                            style="@style/TextInputLayoutStyle"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:hint="@string/well_intake_pressure"
+                            app:hintTextAppearance="@style/TextLabel"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="@id/well_edittext_2"
+                            app:layout_constraintTop_toBottomOf="@id/well_edittext_2">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/well_intake_pressure"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:imeOptions="actionDone"
+                                android:inputType="number|numberDecimal"
+                                android:longClickable="false"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="10dp"
+                                android:textAlignment="center"
+                                android:textSize="16sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/well_intake_pressure_type"
+                            android:layout_width="110dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="3dp"
+                            android:clipToPadding="false"
+                            android:orientation="horizontal"
+                            android:paddingLeft="40dp"
+                            android:paddingEnd="40dp"
+                            android:paddingRight="40dp"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            app:layout_constraintBottom_toBottomOf="@id/well_edittext_4"
+                            app:layout_constraintStart_toEndOf="@id/well_edittext_4"
+                            app:layout_constraintTop_toTopOf="@id/well_edittext_4"
+                            tools:ignore="MissingConstraints"
+                            tools:listitem="@layout/picker" />
+
+                        <ImageView
+                            android:id="@+id/well_intake_pressure_type_img1"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:src="@drawable/layer_list"
+                            android:theme="@style/SelectorStyle"
+                            app:layout_constraintBottom_toBottomOf="@id/well_intake_pressure_type"
+                            app:layout_constraintEnd_toEndOf="@id/well_intake_pressure_type"
+                            app:layout_constraintStart_toStartOf="@id/well_intake_pressure_type"
+                            app:layout_constraintTop_toTopOf="@id/well_intake_pressure_type"
+                            tools:ignore="ContentDescription"
+                            tools:layout_editor_absoluteX="78dp"
+                            tools:layout_editor_absoluteY="53dp" />
+
+                        <ImageView
+                            android:id="@+id/well_intake_pressure_type_img2"
+                            android:layout_width="70dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/square2"
+                            android:theme="@style/VectorStroke"
+                            app:layout_constraintBottom_toBottomOf="@id/well_intake_pressure_type"
+                            app:layout_constraintEnd_toEndOf="@id/well_intake_pressure_type"
+                            app:layout_constraintStart_toStartOf="@id/well_intake_pressure_type"
+                            app:layout_constraintTop_toTopOf="@id/well_intake_pressure_type"
+                            tools:ignore="ContentDescription"
+                            tools:layout_editor_absoluteX="108dp"
+                            tools:layout_editor_absoluteY="45dp" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/well_edittext_5"
+                            style="@style/TextInputLayoutStyle"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:hint="@string/well_fluid_density"
+                            app:hintTextAppearance="@style/TextLabel"
+                            app:layout_constraintBottom_toBottomOf="@id/well_intake_pressure_type"
+                            app:layout_constraintStart_toEndOf="@id/well_intake_pressure_type"
+                            app:layout_constraintTop_toTopOf="@id/well_intake_pressure_type">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/well_fluid_density"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:imeOptions="actionDone"
+                                android:inputType="number|numberDecimal"
+                                android:longClickable="false"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="10dp"
+                                android:textAlignment="center"
+                                android:textSize="16sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/set2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/square_white"
+                        android:elevation="12dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/set1">
+
+                        <TextView
+                            android:id="@+id/tubing_title"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="30dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="30dp"
+                            android:selectAllOnFocus="false"
+                            android:text="@string/tubing_title"
+                            android:textAlignment="center"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/info_set2"
+                            style="@style/VectorTint"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="5dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/about_selector"
+                            tools:ignore="ContentDescription" />
+
+                        <TextView
+                            android:id="@+id/title2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:text="1:"
+                            android:textSize="16sp"
+                            app:layout_constraintEnd_toStartOf="@+id/tubing1_type"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintHorizontal_chainStyle="packed"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tubing_title"
+                            app:layout_goneMarginTop="15dp"
+                            tools:ignore="HardcodedText" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/tubing1_type"
+                            android:layout_width="130dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="3dp"
+                            android:clipToPadding="false"
+                            android:orientation="horizontal"
+                            android:paddingLeft="60dp"
+                            android:paddingEnd="60dp"
+                            android:paddingRight="60dp"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            app:layout_constraintBottom_toBottomOf="@id/title2"
+                            app:layout_constraintEnd_toStartOf="@+id/tubing1_type_length"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/title2"
+                            app:layout_constraintTop_toTopOf="@id/title2"
+                            tools:ignore="MissingConstraints"
+                            tools:listitem="@layout/picker" />
+
+                        <ImageView
+                            android:id="@+id/tubing1_type_image1"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:src="@drawable/layer_list"
+                            android:theme="@style/SelectorStyle"
+                            app:layout_constraintBottom_toBottomOf="@id/tubing1_type"
+                            app:layout_constraintEnd_toEndOf="@id/tubing1_type"
+                            app:layout_constraintStart_toStartOf="@id/tubing1_type"
+                            app:layout_constraintTop_toTopOf="@id/tubing1_type"
+                            tools:ignore="ContentDescription"
+                            tools:layout_editor_absoluteX="138dp"
+                            tools:layout_editor_absoluteY="59dp" />
+
+                        <ImageView
+                            android:id="@+id/tubing1_type_image2"
+                            android:layout_width="70dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/square2"
+                            android:theme="@style/VectorStroke"
+                            app:layout_constraintBottom_toBottomOf="@id/tubing1_type"
+                            app:layout_constraintEnd_toEndOf="@id/tubing1_type"
+                            app:layout_constraintStart_toStartOf="@id/tubing1_type"
+                            app:layout_constraintTop_toTopOf="@id/tubing1_type"
+                            tools:ignore="ContentDescription"
+                            tools:layout_editor_absoluteX="153dp"
+                            tools:layout_editor_absoluteY="51dp" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/tubing1_type_length"
+                            style="@style/TextInputLayoutStyle"
+                            android:layout_width="110dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="3dp"
+                            android:hint="@string/cable_length"
+                            app:hintTextAppearance="@style/TextLabel"
+                            app:layout_constraintBottom_toBottomOf="@id/tubing1_type"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/tubing1_type"
+                            app:layout_constraintTop_toTopOf="@id/tubing1_type">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/tubing1_length"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:imeOptions="actionDone"
+                                android:inputType="number|numberDecimal"
+                                android:longClickable="false"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="10dp"
+                                android:textAlignment="center"
+                                android:textSize="16sp"
+                                tools:ignore="DuplicateSpeakableTextCheck" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <TextView
+                            android:id="@+id/title3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="30dp"
+                            android:text="2:"
+                            android:textSize="16sp"
+                            app:layout_constraintEnd_toStartOf="@+id/tubing2_type"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintHorizontal_chainStyle="packed"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/title2"
+                            app:layout_goneMarginTop="15dp"
+                            tools:ignore="HardcodedText" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/tubing2_type"
+                            android:layout_width="130dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="3dp"
+                            android:clipToPadding="false"
+                            android:orientation="horizontal"
+                            android:paddingLeft="60dp"
+                            android:paddingEnd="60dp"
+                            android:paddingRight="60dp"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            app:layout_constraintBottom_toBottomOf="@id/title3"
+                            app:layout_constraintEnd_toStartOf="@+id/tubing2_type_length"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/title3"
+                            app:layout_constraintTop_toTopOf="@id/title3"
+                            tools:ignore="MissingConstraints"
+                            tools:listitem="@layout/picker" />
+
+                        <ImageView
+                            android:id="@+id/tubing2_type_image1"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:src="@drawable/layer_list"
+                            android:theme="@style/SelectorStyle"
+                            app:layout_constraintBottom_toBottomOf="@id/tubing2_type"
+                            app:layout_constraintEnd_toEndOf="@id/tubing2_type"
+                            app:layout_constraintStart_toStartOf="@id/tubing2_type"
+                            app:layout_constraintTop_toTopOf="@id/tubing2_type"
+                            tools:ignore="ContentDescription"
+                            tools:layout_editor_absoluteX="138dp"
+                            tools:layout_editor_absoluteY="59dp" />
+
+                        <ImageView
+                            android:id="@+id/tubing2_type_image2"
+                            android:layout_width="70dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/square2"
+                            android:theme="@style/VectorStroke"
+                            app:layout_constraintBottom_toBottomOf="@id/tubing2_type"
+                            app:layout_constraintEnd_toEndOf="@id/tubing2_type"
+                            app:layout_constraintStart_toStartOf="@id/tubing2_type"
+                            app:layout_constraintTop_toTopOf="@id/tubing2_type"
+                            tools:ignore="ContentDescription"
+                            tools:layout_editor_absoluteX="153dp"
+                            tools:layout_editor_absoluteY="51dp" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/tubing2_type_length"
+                            style="@style/TextInputLayoutStyle"
+                            android:layout_width="110dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="3dp"
+                            android:hint="@string/cable_length"
+                            app:hintTextAppearance="@style/TextLabel"
+                            app:layout_constraintBottom_toBottomOf="@id/tubing2_type"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/tubing2_type"
+                            app:layout_constraintTop_toTopOf="@id/tubing2_type">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/tubing2_length"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:enabled="false"
+                                android:imeOptions="actionDone"
+                                android:inputType="number|numberDecimal"
+                                android:longClickable="false"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="10dp"
+                                android:textAlignment="center"
+                                android:textSize="16sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <TextView
+                            android:id="@+id/title4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="30dp"
+                            android:text="3:"
+                            android:textSize="16sp"
+                            app:layout_constraintEnd_toStartOf="@+id/tubing3_type"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintHorizontal_chainStyle="packed"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/title3"
+                            app:layout_goneMarginTop="15dp"
+                            tools:ignore="HardcodedText" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/tubing3_type"
+                            android:layout_width="130dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="3dp"
+                            android:clipToPadding="false"
+                            android:orientation="horizontal"
+                            android:paddingLeft="60dp"
+                            android:paddingEnd="60dp"
+                            android:paddingRight="60dp"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            app:layout_constraintBottom_toBottomOf="@id/title4"
+                            app:layout_constraintEnd_toStartOf="@+id/tubing3_type_length"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/title4"
+                            app:layout_constraintTop_toTopOf="@id/title4"
+                            tools:ignore="MissingConstraints"
+                            tools:listitem="@layout/picker" />
+
+                        <ImageView
+                            android:id="@+id/tubing3_type_image1"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:src="@drawable/layer_list"
+                            android:theme="@style/SelectorStyle"
+                            app:layout_constraintBottom_toBottomOf="@id/tubing3_type"
+                            app:layout_constraintEnd_toEndOf="@id/tubing3_type"
+                            app:layout_constraintStart_toStartOf="@id/tubing3_type"
+                            app:layout_constraintTop_toTopOf="@id/tubing3_type"
+                            tools:ignore="ContentDescription"
+                            tools:layout_editor_absoluteX="138dp"
+                            tools:layout_editor_absoluteY="59dp" />
+
+                        <ImageView
+                            android:id="@+id/tubing3_type_image2"
+                            android:layout_width="70dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/square2"
+                            android:theme="@style/VectorStroke"
+                            app:layout_constraintBottom_toBottomOf="@id/tubing3_type"
+                            app:layout_constraintEnd_toEndOf="@id/tubing3_type"
+                            app:layout_constraintStart_toStartOf="@id/tubing3_type"
+                            app:layout_constraintTop_toTopOf="@id/tubing3_type"
+                            tools:ignore="ContentDescription"
+                            tools:layout_editor_absoluteX="153dp"
+                            tools:layout_editor_absoluteY="51dp" />
+
+                        <TextView
+                            android:id="@+id/tubing_total_length_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginBottom="5dp"
+                            android:text="@string/tubing_total_length"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/title4" />
+
+                        <TextView
+                            android:id="@+id/tubing_total_length_val"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:text="-"
+                            android:textColor="@color/red"
+                            app:layout_constraintBottom_toBottomOf="@+id/tubing_total_length_title"
+                            app:layout_constraintStart_toEndOf="@+id/tubing_total_length_title"
+                            app:layout_constraintTop_toTopOf="@+id/tubing_total_length_title"
+                            tools:ignore="HardcodedText" />
+
+                        <TextView
+                            android:id="@+id/tubing_total_length_measurement_val"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:text="@string/length_measurement_val"
+                            app:layout_constraintBottom_toBottomOf="@+id/tubing_total_length_val"
+                            app:layout_constraintStart_toEndOf="@id/tubing_total_length_val"
+                            app:layout_constraintTop_toTopOf="@+id/tubing_total_length_val" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/tubing3_type_length"
+                            style="@style/TextInputLayoutStyle"
+                            android:layout_width="110dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="3dp"
+                            android:hint="@string/cable_length"
+                            app:hintTextAppearance="@style/TextLabel"
+                            app:layout_constraintBottom_toBottomOf="@id/tubing3_type"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/tubing3_type"
+                            app:layout_constraintTop_toTopOf="@id/tubing3_type">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/tubing3_length"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:enabled="false"
+                                android:imeOptions="actionDone"
+                                android:inputType="number|numberDecimal"
+                                android:longClickable="false"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="10dp"
+                                android:textAlignment="center"
+                                android:textSize="16sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/set3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/square_white"
+                        android:elevation="12dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/set2">
+
+                        <TextView
+                            android:id="@+id/casing_title"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="30dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="30dp"
+                            android:selectAllOnFocus="false"
+                            android:text="@string/casing_title"
+                            android:textAlignment="center"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/casing_rec_length"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:selectAllOnFocus="false"
+                            android:text="@string/total_length_control"
+                            android:textAlignment="center"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toStartOf="@+id/casing_rec_length_val"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintHorizontal_chainStyle="packed"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/casing_title" />
+
+                        <TextView
+                            android:id="@+id/casing_rec_length_val"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:selectAllOnFocus="false"
+                            android:text="-"
+                            android:textAlignment="center"
+                            android:textColor="@color/red"
+                            android:textSize="18sp"
+                            app:layout_constraintBottom_toBottomOf="@id/casing_rec_length"
+                            app:layout_constraintEnd_toStartOf="@+id/casing_rec_length_measur_val"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/casing_rec_length"
+                            app:layout_constraintTop_toTopOf="@id/casing_rec_length"
+                            tools:ignore="HardcodedText" />
+
+                        <TextView
+                            android:id="@+id/casing_rec_length_measur_val"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:selectAllOnFocus="false"
+                            android:text="@string/length_measurement_val"
+                            android:textAlignment="center"
+                            android:textSize="18sp"
+                            app:layout_constraintBottom_toBottomOf="@id/casing_rec_length_val"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/casing_rec_length_val"
+                            app:layout_constraintTop_toTopOf="@id/casing_rec_length_val" />
+
+                        <ImageView
+                            android:id="@+id/info_set3"
+                            style="@style/VectorTint"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="5dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/about_selector"
+                            tools:ignore="ContentDescription" />
+
+                        <TextView
+                            android:id="@+id/casing_title2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:text="1:"
+                            android:textSize="16sp"
+                            app:layout_constraintEnd_toStartOf="@+id/casing1_type"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintHorizontal_chainStyle="packed"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/casing_rec_length"
+                            app:layout_goneMarginTop="15dp"
+                            tools:ignore="HardcodedText" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/casing1_type"
+                            android:layout_width="130dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="3dp"
+                            android:clipToPadding="false"
+                            android:orientation="horizontal"
+                            android:paddingLeft="60dp"
+                            android:paddingEnd="60dp"
+                            android:paddingRight="60dp"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            app:layout_constraintBottom_toBottomOf="@id/casing_title2"
+                            app:layout_constraintEnd_toStartOf="@+id/casing1_type_length"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/casing_title2"
+                            app:layout_constraintTop_toTopOf="@id/casing_title2"
+                            tools:ignore="MissingConstraints"
+                            tools:listitem="@layout/picker" />
+
+                        <ImageView
+                            android:id="@+id/casing1_type_image1"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:src="@drawable/layer_list"
+                            android:theme="@style/SelectorStyle"
+                            app:layout_constraintBottom_toBottomOf="@id/casing1_type"
+                            app:layout_constraintEnd_toEndOf="@id/casing1_type"
+                            app:layout_constraintStart_toStartOf="@id/casing1_type"
+                            app:layout_constraintTop_toTopOf="@id/casing1_type"
+                            tools:ignore="ContentDescription"
+                            tools:layout_editor_absoluteX="138dp"
+                            tools:layout_editor_absoluteY="59dp" />
+
+                        <ImageView
+                            android:id="@+id/casing1_type_image2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:src="@drawable/square3"
+                            android:theme="@style/VectorStroke"
+                            app:layout_constraintBottom_toBottomOf="@id/casing1_type"
+                            app:layout_constraintEnd_toEndOf="@id/casing1_type"
+                            app:layout_constraintStart_toStartOf="@id/casing1_type"
+                            app:layout_constraintTop_toTopOf="@id/casing1_type"
+                            tools:ignore="ContentDescription" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/casing1_type_length"
+                            style="@style/TextInputLayoutStyle"
+                            android:layout_width="110dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="3dp"
+                            android:hint="@string/cable_length"
+                            app:hintTextAppearance="@style/TextLabel"
+                            app:layout_constraintBottom_toBottomOf="@id/casing1_type"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/casing1_type"
+                            app:layout_constraintTop_toTopOf="@id/casing1_type">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/casing1_length"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:imeOptions="actionDone"
+                                android:inputType="number|numberDecimal"
+                                android:longClickable="false"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="10dp"
+                                android:textAlignment="center"
+                                android:textSize="16sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <TextView
+                            android:id="@+id/casing_title3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="30dp"
+                            android:text="2:"
+                            android:textSize="16sp"
+                            app:layout_constraintEnd_toStartOf="@+id/casing2_type"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintHorizontal_chainStyle="packed"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/casing_title2"
+                            app:layout_goneMarginTop="15dp"
+                            tools:ignore="HardcodedText" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/casing2_type"
+                            android:layout_width="130dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="3dp"
+                            android:clipToPadding="false"
+                            android:orientation="horizontal"
+                            android:paddingLeft="60dp"
+                            android:paddingEnd="60dp"
+                            android:paddingRight="60dp"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            app:layout_constraintBottom_toBottomOf="@id/casing_title3"
+                            app:layout_constraintEnd_toStartOf="@+id/casing2_type_length"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/casing_title3"
+                            app:layout_constraintTop_toTopOf="@id/casing_title3"
+                            tools:ignore="MissingConstraints"
+                            tools:listitem="@layout/picker" />
+
+                        <ImageView
+                            android:id="@+id/casing2_type_image1"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:src="@drawable/layer_list"
+                            android:theme="@style/SelectorStyle"
+                            app:layout_constraintBottom_toBottomOf="@id/casing2_type"
+                            app:layout_constraintEnd_toEndOf="@id/casing2_type"
+                            app:layout_constraintStart_toStartOf="@id/casing2_type"
+                            app:layout_constraintTop_toTopOf="@id/casing2_type"
+                            tools:ignore="ContentDescription"
+                            tools:layout_editor_absoluteX="138dp"
+                            tools:layout_editor_absoluteY="59dp" />
+
+                        <ImageView
+                            android:id="@+id/casing2_type_image2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:src="@drawable/square3"
+                            android:theme="@style/VectorStroke"
+                            app:layout_constraintBottom_toBottomOf="@id/casing2_type"
+                            app:layout_constraintEnd_toEndOf="@id/casing2_type"
+                            app:layout_constraintStart_toStartOf="@id/casing2_type"
+                            app:layout_constraintTop_toTopOf="@id/casing2_type"
+                            tools:ignore="ContentDescription"
+                            tools:layout_editor_absoluteX="153dp"
+                            tools:layout_editor_absoluteY="51dp" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/casing2_type_length"
+                            style="@style/TextInputLayoutStyle"
+                            android:layout_width="110dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="3dp"
+                            android:hint="@string/cable_length"
+                            app:hintTextAppearance="@style/TextLabel"
+                            app:layout_constraintBottom_toBottomOf="@id/casing2_type"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/casing2_type"
+                            app:layout_constraintTop_toTopOf="@id/casing2_type">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/casing2_length"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:enabled="false"
+                                android:imeOptions="actionDone"
+                                android:inputType="number|numberDecimal"
+                                android:longClickable="false"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="10dp"
+                                android:textAlignment="center"
+                                android:textSize="16sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <TextView
+                            android:id="@+id/casing_title4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="30dp"
+                            android:layout_marginBottom="20dp"
+                            android:text="3:"
+                            android:textSize="16sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/casing3_type"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintHorizontal_chainStyle="packed"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/casing_title3"
+                            app:layout_goneMarginTop="15dp"
+                            tools:ignore="HardcodedText" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/casing3_type"
+                            android:layout_width="130dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="3dp"
+                            android:clipToPadding="false"
+                            android:orientation="horizontal"
+                            android:paddingLeft="60dp"
+                            android:paddingEnd="60dp"
+                            android:paddingRight="60dp"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            app:layout_constraintBottom_toBottomOf="@id/casing_title4"
+                            app:layout_constraintEnd_toStartOf="@+id/casing3_type_length"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/casing_title4"
+                            app:layout_constraintTop_toTopOf="@id/casing_title4"
+                            tools:ignore="MissingConstraints"
+                            tools:listitem="@layout/picker" />
+
+                        <ImageView
+                            android:id="@+id/casing3_type_image1"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:src="@drawable/layer_list"
+                            android:theme="@style/SelectorStyle"
+                            app:layout_constraintBottom_toBottomOf="@id/casing3_type"
+                            app:layout_constraintEnd_toEndOf="@id/casing3_type"
+                            app:layout_constraintStart_toStartOf="@id/casing3_type"
+                            app:layout_constraintTop_toTopOf="@id/casing3_type"
+                            tools:ignore="ContentDescription"
+                            tools:layout_editor_absoluteX="138dp"
+                            tools:layout_editor_absoluteY="59dp" />
+
+                        <ImageView
+                            android:id="@+id/casing3_type_image2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:src="@drawable/square3"
+                            android:theme="@style/VectorStroke"
+                            app:layout_constraintBottom_toBottomOf="@id/casing3_type"
+                            app:layout_constraintEnd_toEndOf="@id/casing3_type"
+                            app:layout_constraintStart_toStartOf="@id/casing3_type"
+                            app:layout_constraintTop_toTopOf="@id/casing3_type"
+                            tools:ignore="ContentDescription"
+                            tools:layout_editor_absoluteX="153dp"
+                            tools:layout_editor_absoluteY="51dp" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/casing3_type_length"
+                            style="@style/TextInputLayoutStyle"
+                            android:layout_width="110dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="3dp"
+                            android:hint="@string/cable_length"
+                            app:hintTextAppearance="@style/TextLabel"
+                            app:layout_constraintBottom_toBottomOf="@id/casing3_type"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/casing3_type"
+                            app:layout_constraintTop_toTopOf="@id/casing3_type">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/casing3_length"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:enabled="false"
+                                android:imeOptions="actionDone"
+                                android:inputType="number|numberDecimal"
+                                android:longClickable="false"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="10dp"
+                                android:textAlignment="center"
+                                android:textSize="16sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/set4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/square_white"
+                        android:elevation="12dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/set3">
+
+                        <TextView
+                            android:id="@+id/set3_title"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="30dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="30dp"
+                            android:text="@string/calculations_title"
+                            android:textAlignment="center"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/info_set4"
+                            style="@style/VectorTint"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="4dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/about_selector"
+                            tools:ignore="ContentDescription" />
+
+                        <TextView
+                            android:id="@+id/tubing_volume_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/vol_tubing_title"
+                            android:textAlignment="viewStart"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/set3_title" />
+
+                        <TextView
+                            android:id="@+id/tubing_volume_val"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:text="-"
+                            android:textColor="@color/red"
+                            app:layout_constraintBottom_toBottomOf="@+id/tubing_volume_title"
+                            app:layout_constraintStart_toEndOf="@+id/tubing_volume_title"
+                            app:layout_constraintTop_toTopOf="@+id/tubing_volume_title"
+                            tools:ignore="HardcodedText" />
+
+                        <TextView
+                            android:id="@+id/tubing_volume_measurement_val"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:text="@string/volume_measurement_val"
+                            app:layout_constraintBottom_toBottomOf="@+id/tubing_volume_val"
+                            app:layout_constraintStart_toEndOf="@id/tubing_volume_val"
+                            app:layout_constraintTop_toTopOf="@+id/tubing_volume_val"
+                            tools:ignore="TooManyViews" />
+
+                        <TextView
+                            android:id="@+id/tubing_volume_title2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="5dp"
+                            android:text="@string/vol_tubing_title2"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tubing_volume_title" />
+
+                        <TextView
+                            android:id="@+id/tubing_volume_val2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:text="-"
+                            android:textColor="@color/red"
+                            app:layout_constraintBottom_toBottomOf="@+id/tubing_volume_title2"
+                            app:layout_constraintStart_toEndOf="@+id/tubing_volume_title2"
+                            app:layout_constraintTop_toTopOf="@+id/tubing_volume_title2"
+                            tools:ignore="HardcodedText" />
+
+                        <TextView
+                            android:id="@+id/casing_volume_measurement_val2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:text="@string/volume_measurement_val"
+                            app:layout_constraintBottom_toBottomOf="@+id/tubing_volume_val2"
+                            app:layout_constraintStart_toEndOf="@id/tubing_volume_val2"
+                            app:layout_constraintTop_toTopOf="@+id/tubing_volume_val2" />
+
+                        <TextView
+                            android:id="@+id/casing_volume_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="5dp"
+                            android:text="@string/vol_casing_title"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tubing_volume_title2" />
+
+                        <TextView
+                            android:id="@+id/casing_volume_val"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:text="-"
+                            android:textColor="@color/red"
+                            app:layout_constraintBottom_toBottomOf="@+id/casing_volume_title"
+                            app:layout_constraintStart_toEndOf="@+id/casing_volume_title"
+                            app:layout_constraintTop_toTopOf="@+id/casing_volume_title"
+                            tools:ignore="HardcodedText" />
+
+                        <TextView
+                            android:id="@+id/casing_volume_measurement_val"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:text="@string/volume_measurement_val"
+                            app:layout_constraintBottom_toBottomOf="@+id/casing_volume_val"
+                            app:layout_constraintStart_toEndOf="@id/casing_volume_val"
+                            app:layout_constraintTop_toTopOf="@+id/casing_volume_val" />
+
+                        <TextView
+                            android:id="@+id/resudial_vol_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="5dp"
+                            android:text="@string/vol_res_title"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/casing_volume_title" />
+
+                        <TextView
+                            android:id="@+id/resudial_vol_val"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:text="-"
+                            android:textColor="@color/red"
+                            app:layout_constraintBottom_toBottomOf="@+id/resudial_vol_title"
+                            app:layout_constraintStart_toEndOf="@+id/resudial_vol_title"
+                            app:layout_constraintTop_toTopOf="@+id/resudial_vol_title"
+                            tools:ignore="HardcodedText" />
+
+                        <TextView
+                            android:id="@+id/resudial_vol_measurement_val"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:text="@string/volume_measurement_val"
+                            app:layout_constraintBottom_toBottomOf="@+id/resudial_vol_val"
+                            app:layout_constraintStart_toEndOf="@id/resudial_vol_val"
+                            app:layout_constraintTop_toTopOf="@+id/resudial_vol_val" />
+
+                        <TextView
+                            android:id="@+id/fluid_vol_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:text="@string/total_fluid_vol_in_well"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/resudial_vol_title" />
+
+                        <TextView
+                            android:id="@+id/fluid_vol_val"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:text="-"
+                            android:textColor="@color/red"
+                            app:layout_constraintBottom_toBottomOf="@+id/fluid_vol_title"
+                            app:layout_constraintStart_toEndOf="@+id/fluid_vol_title"
+                            app:layout_constraintTop_toTopOf="@+id/fluid_vol_title"
+                            tools:ignore="HardcodedText" />
+
+                        <TextView
+                            android:id="@+id/fluid_vol_measurement_val"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:text="@string/volume_measurement_val"
+                            app:layout_constraintBottom_toBottomOf="@+id/fluid_vol_val"
+                            app:layout_constraintStart_toEndOf="@id/fluid_vol_val"
+                            app:layout_constraintTop_toTopOf="@+id/fluid_vol_val" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </ScrollView>
+        </FrameLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
