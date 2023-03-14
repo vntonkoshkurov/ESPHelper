@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.os.*
 import android.text.Html
+import android.util.Log
 import android.view.WindowManager
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -11,6 +12,7 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
 import com.example.espspecialisthelper.databinding.ActivityMainBinding
 import com.example.espspecialisthelper.ui.about.About
+import com.example.espspecialisthelper.ui.comissioning.Comissioning
 import com.example.espspecialisthelper.ui.menu1.FragmentMenu1
 import com.example.espspecialisthelper.ui.menu2.FragmentMenu2
 import com.example.espspecialisthelper.ui.settings.Settings
@@ -28,6 +30,7 @@ class MainActivity : AppCompatActivity() {
         const val CHANGE_THEME = true
         const val NOTHING = false
         var reStartval = NOTHING
+        var wasPause = false
 
         /**
          * Лябда для создания вибрации при взаимодействии с элементами интерфейса
@@ -97,6 +100,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         val prefs = getSharedPreferences("settings", Context.MODE_PRIVATE)
 
+        //получаем интент, который может быть создан при работающем сервисе отсчета времени ВНР
+        val checkServiceIntent = intent.getBooleanExtra("isServiseStarted", false)
+
         /*данная проверка исключает двойную смену темы, если была команда на изменение из фрагмента настроек
         * также, если тема приложения не совпадает с системной, то произойдет двойной перезапуск активити, что не
         * желательно для улучшения производительности*/
@@ -116,7 +122,6 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
 
         /*создаем массив из стэков, согласно общему количеству пунков в меню
          В нашем случае у нас 4 пункта меню, соответственно будем хранить 4-е стека с последовательностями
@@ -157,14 +162,21 @@ class MainActivity : AppCompatActivity() {
                 else -> false
             }
         }
+
         if (reStartval) {
             reStartval = NOTHING
         } else {
-            /**Здесь необходимо проработать интент от Сервисной службы.
-             * Когда Появляется интент от сервисной службы активность должны открыть фрагмент ВНР*/
-
-            navView.selectedItemId = R.id.fragment1
+            /*если активность была вызвана при нажатии на уведомление в шторке службы сервиса отсчета времени
+            * то должен быть загружен фрагмент ВНР, в противном случае должен быть открыт фрагмент №1 по умолчанию*/
+            if (checkServiceIntent) {
+                navView.selectedItemId = R.id.fragment2
+                pushFragments(TAB_M2, Comissioning(), true)
+            } else {
+                navView.selectedItemId = R.id.fragment1
+            }
         }
+
+        Log.d("3", "created")
 
     }
 
@@ -221,6 +233,28 @@ class MainActivity : AppCompatActivity() {
             return
         }
         popFragments()
+    }
+
+    /*ниже реализация перехода на фрагмент при выходе активности из фонового режима*/
+    override fun onPause() {
+        super.onPause()
+        wasPause = true
+        Log.d("1", "paused")
+    }
+
+    /*при выходе из фонового режима проверяется наличие интента, которое может быть создано сервисной службой
+    * отсчета времени ВНР. Если интент будет в наличии, то проверяется наличие фрагмента ВНР в массиве стеков и в
+    * зависимости от этого будут предприняты различные меры по его активации на экране */
+    override fun onResume() {
+        super.onResume()
+        if (wasPause) {
+            /**При выходе из режима ожидания активности из уведомления сервисной службы отсчета времени ВНР
+             * необходимо реализовать отображение фрагмента ВНР
+             * Если выход из режима ожидания не был инициирован из уведомления сервисной службы, то данную проверку нужно игнорировать*/
+        }
+
+        wasPause = false
+        Log.d("2", "resumed")
     }
 
 }

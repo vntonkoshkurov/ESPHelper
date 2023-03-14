@@ -71,6 +71,8 @@ class TimerService : Service() {
         //создается намерение при нажатии на уведомление.
         //нам нужно, чтобы при нажатии на уведомление приложение открывалось в том же окне, где оно и свернулось
         val notificationIntent = Intent(applicationContext, MainActivity::class.java)
+        //добавляем в интент данные о необходимости открыть фрагмент ВНР при нажатии на фрагмент уведомления
+        notificationIntent.putExtra("isServiseStarted", true)
         val contentIntent = PendingIntent.getActivity(
             applicationContext,
             0, notificationIntent,
